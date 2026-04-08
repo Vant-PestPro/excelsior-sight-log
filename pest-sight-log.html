@@ -96,23 +96,34 @@
     font-size: 7pt;
   }
 
-  /* ===== TECHNICIAN ROW — clean, lightly shaded ===== */
+  /* ===== TECHNICIAN ROW — clean, lightly shaded, tall writing space ===== */
   .tech-row td {
     background: #f0f0f0 !important;
     border-top: 0;
-    border-bottom: 1px solid #bbb;
+    border-bottom: 1.5px solid #aaa;
     font-size: 7pt;
+    height: 52px;
+    vertical-align: top;
+    padding: 3px 4px 3px 4px;
   }
   .tech-row .row-flag {
     background: #ddd !important;
-    color: #555;
-    font-size: 6.5pt;
+    color: #666;
+    font-size: 6pt;
     font-weight: bold;
     text-align: center;
     vertical-align: middle;
-    writing-mode: horizontal-tb;
   }
-  .fl { font-size: 6pt; color: #888; display: block; margin-bottom: 1px; text-transform: uppercase; letter-spacing: 0.2px; }
+  /* tiny hint label — sits at top of cell, rest is blank writing space */
+  .fl {
+    font-size: 5.5pt;
+    color: #aaa;
+    display: block;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+  }
 
   /* ===== COVER PAGE ===== */
   .cover {
