@@ -5,11 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pest Pro – Pest Sight Log – Rehabilitation Center of Orlando</title>
 <style>
-  /* ===== GLOBAL ===== */
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: Arial, Helvetica, sans-serif; font-size: 10pt; color: #1a1a1a; }
 
-  /* ===== PRINT ===== */
   @media print {
     body { font-size: 9pt; }
     .page { page-break-after: always; break-after: page; }
@@ -18,17 +16,15 @@
     .no-print { display: none; }
   }
 
-  /* ===== BRAND ===== */
   :root {
     --navy: #1a2557;
     --yellow: #FFB800;
     --red: #cc2200;
     --white: #ffffff;
-    --light-gray: #f4f5f7;
-    --mid-gray: #d0d4de;
+    --light-gray: #f5f5f5;
+    --mid-gray: #c8ccd8;
   }
 
-  /* ===== SHARED LAYOUT ===== */
   .page {
     width: 8.5in;
     min-height: 11in;
@@ -38,100 +34,57 @@
     position: relative;
   }
 
-  /* ===== HEADER STRIP (all interior pages) ===== */
+  /* ===== PAGE HEADER (interior pages) ===== */
   .page-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 3px solid var(--navy);
+    border-bottom: 2px solid var(--navy);
     padding-bottom: 8px;
     margin-bottom: 16px;
   }
-  .page-header .logo-block {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .logo-text {
-    font-size: 20pt;
-    font-weight: 900;
-    letter-spacing: 2px;
-    color: var(--yellow);
-    text-shadow: -1px -1px 0 var(--navy), 1px -1px 0 var(--navy), -1px 1px 0 var(--navy), 1px 1px 0 var(--navy);
-  }
-  .logo-sub {
-    font-size: 7pt;
-    font-weight: bold;
-    color: var(--navy);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }
-  .page-header .right-block {
-    text-align: right;
-    font-size: 8pt;
-    color: var(--navy);
-    line-height: 1.5;
-  }
-  .page-header .right-block strong {
-    display: block;
-    font-size: 10pt;
-  }
+  .header-logo { height: 44px; width: auto; display: block; }
+  .page-header .right-block { text-align: right; font-size: 8pt; color: var(--navy); line-height: 1.5; }
+  .page-header .right-block strong { display: block; font-size: 10pt; }
 
   /* ===== FOOTER ===== */
   .page-footer {
     position: absolute;
-    bottom: 0.35in;
-    left: 0.5in;
-    right: 0.5in;
+    bottom: 0.35in; left: 0.5in; right: 0.5in;
     border-top: 1px solid var(--mid-gray);
     padding-top: 5px;
     display: flex;
     justify-content: space-between;
-    font-size: 7.5pt;
-    color: #666;
+    font-size: 7pt;
+    color: #888;
   }
 
   /* ===== SECTION TITLES ===== */
   .section-title {
     background: var(--navy);
     color: var(--white);
-    font-size: 11pt;
+    font-size: 10pt;
     font-weight: bold;
-    padding: 5px 10px;
+    padding: 4px 10px;
     margin-bottom: 10px;
-    letter-spacing: 0.5px;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
-  .section-sub {
-    font-size: 8.5pt;
-    color: #555;
-    margin-bottom: 12px;
-    line-height: 1.5;
-  }
+  .section-sub { font-size: 8pt; color: #555; margin-bottom: 12px; line-height: 1.5; }
 
   /* ===== TABLES ===== */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 8.5pt;
-  }
+  table { width: 100%; border-collapse: collapse; font-size: 8pt; }
   th {
     background: var(--navy);
     color: var(--white);
-    padding: 5px 4px;
+    padding: 4px;
     text-align: left;
-    font-size: 7.5pt;
+    font-size: 7pt;
     font-weight: bold;
     border: 1px solid var(--navy);
     vertical-align: top;
   }
-  td {
-    border: 1px solid var(--mid-gray);
-    padding: 4px;
-    vertical-align: top;
-    min-height: 28px;
-    height: 36px;
-  }
+  td { border: 1px solid #ccc; padding: 3px 4px; vertical-align: top; height: 28px; }
   tr:nth-child(even) td { background: var(--light-gray); }
   tr:nth-child(odd) td { background: var(--white); }
   .row-num {
@@ -139,27 +92,27 @@
     color: var(--white);
     font-weight: bold;
     text-align: center;
-    width: 24px;
+    width: 20px;
     font-size: 7pt;
   }
 
-  /* ===== TECHNICIAN RESPONSE ROW ===== */
+  /* ===== TECHNICIAN ROW — clean, lightly shaded ===== */
   .tech-row td {
-    background: #fffbef !important;
+    background: #f0f0f0 !important;
     border-top: 0;
-    border-bottom: 2px solid var(--yellow);
+    border-bottom: 1px solid #bbb;
+    font-size: 7pt;
   }
-  .tech-label {
+  .tech-row .row-flag {
+    background: #ddd !important;
+    color: #555;
     font-size: 6.5pt;
-    color: var(--red);
     font-weight: bold;
-    text-transform: uppercase;
-    padding: 1px 3px;
-    background: var(--yellow);
-    display: inline-block;
-    margin-bottom: 2px;
-    border-radius: 2px;
+    text-align: center;
+    vertical-align: middle;
+    writing-mode: horizontal-tb;
   }
+  .fl { font-size: 6pt; color: #888; display: block; margin-bottom: 1px; text-transform: uppercase; letter-spacing: 0.2px; }
 
   /* ===== COVER PAGE ===== */
   .cover {
@@ -167,426 +120,164 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    min-height: 11in;
-    background: var(--white);
-    padding: 0.7in 0.6in;
-    text-align: center;
+    min-height: 10in;
+    padding: 0.5in 0.65in;
   }
-  .cover-top {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
-  }
-  .cover-logo-box {
-    background: var(--navy);
-    color: var(--yellow);
-    font-size: 52pt;
-    font-weight: 900;
-    letter-spacing: 6px;
-    padding: 18px 36px 14px 36px;
-    border-radius: 4px;
-    text-shadow: -2px -2px 0 #fff2, 2px -2px 0 #fff2, -2px 2px 0 #fff2, 2px 2px 0 #fff2;
-    line-height: 1;
-  }
-  .cover-logo-tagline {
-    color: var(--navy);
-    font-size: 8.5pt;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-top: 4px;
-  }
+  .cover-top { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+  .cover-logo { height: 96px; width: auto; }
   .cover-divider {
-    width: 80%;
-    height: 4px;
+    width: 70%;
+    height: 3px;
     background: linear-gradient(to right, var(--navy), var(--yellow), var(--red));
     border-radius: 2px;
-    margin: 8px auto;
-  }
-  .cover-title {
-    font-size: 24pt;
-    font-weight: 900;
-    color: var(--navy);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 1.2;
-  }
-  .cover-subtitle {
-    font-size: 14pt;
-    font-weight: bold;
-    color: var(--red);
-    letter-spacing: 1px;
-    margin-top: 4px;
-  }
-  .cover-facility-box {
-    border: 3px solid var(--navy);
-    padding: 18px 32px;
-    width: 85%;
-    margin: 12px auto;
-    border-radius: 4px;
-  }
-  .cover-facility-box .label {
-    font-size: 8pt;
-    color: #888;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: bold;
-    margin-bottom: 4px;
-  }
-  .cover-facility-box .value {
-    font-size: 14pt;
-    font-weight: bold;
-    color: var(--navy);
-  }
-  .cover-facility-box .sub-value {
-    font-size: 10pt;
-    color: #444;
-    margin-top: 2px;
-  }
-  .cover-fields-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 20px;
-    width: 85%;
-    margin: 6px auto;
-    text-align: left;
-  }
-  .cover-field {
-    border-bottom: 1.5px solid var(--navy);
-    padding: 4px 2px 2px 2px;
-  }
-  .cover-field .field-label {
-    font-size: 7pt;
-    color: #888;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-  }
-  .cover-field .field-value {
-    font-size: 9pt;
-    color: var(--navy);
-    font-weight: bold;
-    min-height: 14px;
-  }
-  .cover-ipm-badge {
-    background: var(--light-gray);
-    border: 1.5px solid var(--mid-gray);
-    border-radius: 4px;
-    padding: 8px 16px;
-    font-size: 8pt;
-    color: #555;
-    width: 85%;
     margin: 0 auto;
+  }
+  .cover-title { font-size: 26pt; font-weight: 900; color: var(--navy); text-transform: uppercase; letter-spacing: 2px; text-align: center; line-height: 1.2; }
+  .cover-subtitle { font-size: 13pt; font-weight: bold; color: var(--red); letter-spacing: 1px; text-align: center; margin-top: 4px; }
+  .cover-facility-box { border: 2px solid var(--navy); padding: 20px 32px; width: 88%; border-radius: 4px; text-align: center; }
+  .cover-facility-box .fac-label { font-size: 7.5pt; color: #888; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; margin-bottom: 5px; }
+  .cover-facility-box .fac-name { font-size: 16pt; font-weight: bold; color: var(--navy); }
+  .cover-facility-box .fac-addr { font-size: 10pt; color: #444; margin-top: 3px; }
+  .cover-ipm-notice {
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px 18px;
+    font-size: 7.5pt;
+    color: #555;
+    width: 88%;
+    line-height: 1.7;
     text-align: left;
-    line-height: 1.6;
   }
-  .cover-ipm-badge strong { color: var(--navy); }
-  .cover-bottom {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-  .cover-contact-strip {
+  .cover-ipm-notice strong { color: var(--navy); }
+  .cover-bottom { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .cover-contact-bar {
     background: var(--navy);
     color: var(--white);
-    padding: 10px 24px;
+    padding: 11px 28px;
     border-radius: 4px;
-    width: 85%;
+    width: 88%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 9pt;
   }
-  .cover-contact-strip .contact-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-  }
-  .cover-contact-strip .contact-item .label {
-    font-size: 6.5pt;
-    color: var(--yellow);
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-  }
-  .cover-contact-strip .contact-item .val {
-    font-size: 9.5pt;
-    font-weight: bold;
-  }
-  .cover-reg-note {
-    font-size: 7pt;
-    color: #888;
-    width: 85%;
-    text-align: center;
-    line-height: 1.5;
-  }
+  .cover-contact-bar .ci { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .cover-contact-bar .ci .cl { font-size: 6pt; color: var(--yellow); text-transform: uppercase; font-weight: bold; letter-spacing: 0.5px; }
+  .cover-contact-bar .ci .cv { font-size: 9.5pt; font-weight: bold; }
+  .cover-reg-note { font-size: 7pt; color: #999; width: 88%; text-align: center; line-height: 1.6; }
 
-  /* ===== REAR COVER ===== */
+  /* ===== REAR COVER — white background, navy border ===== */
   .rear-cover {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 11in;
-    background: var(--navy);
+    min-height: 10in;
     padding: 1in 0.75in;
+    background: var(--white);
+    border: 8px solid var(--navy);
     text-align: center;
-    gap: 28px;
+    gap: 24px;
   }
-  .rear-logo {
-    font-size: 48pt;
-    font-weight: 900;
-    color: var(--yellow);
-    letter-spacing: 4px;
-    text-shadow: -2px -2px 0 #fff2, 2px -2px 0 #fff2, -2px 2px 0 #fff2, 2px 2px 0 #fff2;
-  }
-  .rear-tagline {
-    color: var(--white);
-    font-size: 10pt;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-  .rear-divider {
-    width: 60%;
-    height: 3px;
-    background: var(--yellow);
-    border-radius: 2px;
-    margin: 0 auto;
-  }
-  .rear-contact-block {
-    color: var(--white);
-    line-height: 2;
-    font-size: 10.5pt;
-  }
-  .rear-contact-block strong { color: var(--yellow); font-size: 12pt; }
-  .rear-license-box {
-    background: rgba(255,255,255,0.08);
-    border: 1.5px solid rgba(255,255,255,0.2);
-    border-radius: 4px;
-    padding: 14px 28px;
-    color: #cdd2e6;
-    font-size: 8.5pt;
-    line-height: 2;
-    width: 80%;
-  }
-  .rear-license-box strong { color: var(--yellow); }
-  .rear-note {
-    color: rgba(255,255,255,0.5);
-    font-size: 7.5pt;
-    line-height: 1.6;
-    width: 80%;
-  }
-  .rear-warranty-box {
-    background: var(--yellow);
-    color: var(--navy);
-    padding: 12px 24px;
-    border-radius: 4px;
-    font-size: 9pt;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    line-height: 1.6;
-    width: 80%;
-  }
+  .rear-logo { height: 90px; width: auto; }
+  .rear-tagline { font-size: 10pt; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); }
+  .rear-divider { width: 55%; height: 3px; background: var(--yellow); border-radius: 2px; margin: 0 auto; }
+  .rear-contact-block { color: #333; line-height: 2; font-size: 10.5pt; }
+  .rear-contact-block strong { color: var(--navy); font-size: 13pt; }
+  .rear-license-box { border: 1.5px solid var(--mid-gray); border-radius: 4px; padding: 12px 28px; color: #555; font-size: 8.5pt; line-height: 2; width: 80%; text-align: left; }
+  .rear-license-box strong { color: var(--navy); }
+  .rear-note { color: #999; font-size: 7.5pt; line-height: 1.7; width: 80%; }
+  .rear-cta { background: var(--navy); color: var(--white); padding: 12px 28px; border-radius: 4px; font-size: 9.5pt; font-weight: bold; width: 80%; line-height: 1.6; }
 
-  /* ===== INFO / COMPLIANCE PAGE ===== */
-  .info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 14px;
-  }
-  .info-box {
-    border: 1.5px solid var(--mid-gray);
-    border-radius: 3px;
-    padding: 10px 12px;
-  }
-  .info-box h3 {
-    font-size: 8.5pt;
-    text-transform: uppercase;
-    color: var(--navy);
-    border-bottom: 1.5px solid var(--yellow);
-    padding-bottom: 4px;
-    margin-bottom: 8px;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-  }
-  .info-box ul {
-    list-style: disc;
-    padding-left: 14px;
-    font-size: 8pt;
-    color: #333;
-    line-height: 1.7;
-  }
-  .info-box p {
-    font-size: 8pt;
-    color: #333;
-    line-height: 1.7;
-  }
-  .info-box .fill-line {
-    border-bottom: 1px solid #bbb;
-    margin: 5px 0;
-    min-height: 16px;
-    font-size: 8pt;
-    color: #333;
-  }
+  /* ===== INFO GRIDS ===== */
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+  .info-box { border: 1px solid #ccc; border-radius: 3px; padding: 9px 12px; }
+  .info-box h3 { font-size: 8pt; text-transform: uppercase; color: var(--navy); border-bottom: 1.5px solid var(--yellow); padding-bottom: 3px; margin-bottom: 7px; font-weight: bold; }
+  .info-box ul { list-style: disc; padding-left: 14px; font-size: 7.5pt; color: #333; line-height: 1.7; }
+  .info-box p { font-size: 7.5pt; color: #333; line-height: 1.7; }
+  .fill-line { border-bottom: 1px solid #bbb; min-height: 15px; font-size: 7.5pt; color: #333; margin: 4px 0; }
 
-  /* ===== PEST CODE TABLE ===== */
-  .code-table {
-    width: auto;
-  }
-  .code-table td {
-    font-size: 8pt;
-    padding: 3px 8px;
-    border: 1px solid var(--mid-gray);
-    height: auto;
-  }
-  .code-table th {
-    font-size: 7.5pt;
-  }
+  .code-table td { font-size: 7.5pt; padding: 3px 7px; border: 1px solid #ccc; height: auto; }
+  .code-table th { font-size: 7pt; }
 
-  /* ===== QUICK GUIDE ===== */
   .quick-guide {
-    background: #fffbef;
-    border: 2px solid var(--yellow);
-    border-radius: 4px;
+    border: 1px solid #ccc;
+    border-left: 4px solid var(--navy);
+    border-radius: 3px;
     padding: 10px 14px;
-    font-size: 8pt;
+    font-size: 7.5pt;
     line-height: 1.7;
     margin-bottom: 14px;
     color: #333;
   }
   .quick-guide strong { color: var(--navy); }
-  .quick-guide ol { padding-left: 18px; }
+  .quick-guide ol { padding-left: 18px; margin-top: 4px; }
 
-  /* ===== TREATMENT / SERVICE LOG ===== */
-  .service-table td { height: 32px; }
-
-  /* === PRINT BUTTON === */
-  .print-btn-wrap {
-    text-align: center;
-    padding: 24px;
-    background: #f0f0f0;
-  }
-  .print-btn {
-    background: var(--navy);
-    color: white;
-    border: none;
-    padding: 12px 32px;
-    font-size: 12pt;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: 4px;
-  }
+  /* ===== PRINT BUTTON ===== */
+  .print-btn-wrap { text-align: center; padding: 24px; background: #efefef; }
+  .print-btn { background: var(--navy); color: white; border: none; padding: 12px 32px; font-size: 12pt; font-weight: bold; border-radius: 4px; cursor: pointer; }
   .print-btn:hover { background: #2a3577; }
 </style>
 </head>
 <body>
 
-<!-- ======================================================== -->
-<!--  PRINT BUTTON (screen only)                              -->
-<!-- ======================================================== -->
+<!-- PRINT BUTTON -->
 <div class="print-btn-wrap no-print">
-  <p style="margin-bottom:12px; color:#555; font-size:10pt;">Open in browser and print to PDF (Letter, 0.5" margins) or print directly.</p>
+  <p style="margin-bottom:12px; color:#555; font-size:9pt;">Open in browser → File → Print → Letter, 0.5" margins → Save as PDF</p>
   <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
 </div>
 
 
-<!-- ======================================================== -->
-<!--  PAGE 1 — FRONT COVER                                    -->
-<!-- ======================================================== -->
-<div class="page" style="padding:0;">
+<!-- ================================================================ -->
+<!--  PAGE 1 — FRONT COVER                                            -->
+<!-- ================================================================ -->
+<div class="page" style="padding:0.5in 0.65in;">
 <div class="cover">
   <div class="cover-top">
-    <div>
-      <div class="cover-logo-box">PESTPRO</div>
-      <div class="cover-logo-tagline">Pro-Level Pest Solutions</div>
-    </div>
-
+    <img class="cover-logo" src="logo.jpg" alt="Pest Pro Logo">
     <div class="cover-divider"></div>
-
     <div>
       <div class="cover-title">Pest Sight Log</div>
       <div class="cover-subtitle">Pest Monitoring &amp; Response Record</div>
     </div>
-
     <div class="cover-facility-box">
-      <div class="label">Facility</div>
-      <div class="value">Rehabilitation Center of Orlando</div>
-      <div class="sub-value">9311 S. Orange Blossom Trail, Orlando, FL 32837</div>
-      <div style="margin-top:10px; display:grid; grid-template-columns:1fr 1fr; gap:8px; text-align:left;">
-        <div>
-          <div class="label">Log Year / Period</div>
-          <div style="border-bottom:1.5px solid #aaa; min-height:18px; margin-top:4px;"></div>
-        </div>
-        <div>
-          <div class="label">Binder Number</div>
-          <div style="border-bottom:1.5px solid #aaa; min-height:18px; margin-top:4px;"></div>
-        </div>
-        <div>
-          <div class="label">Facility IPM Contact</div>
-          <div style="border-bottom:1.5px solid #aaa; min-height:18px; margin-top:4px;"></div>
-        </div>
-        <div>
-          <div class="label">Pest Pro Account #</div>
-          <div style="border-bottom:1.5px solid #aaa; min-height:18px; margin-top:4px;"></div>
-        </div>
-      </div>
+      <div class="fac-label">Facility</div>
+      <div class="fac-name">Rehabilitation Center of Orlando</div>
+      <div class="fac-addr">9311 S. Orange Blossom Trail, Orlando, FL 32837</div>
     </div>
-
-    <div class="cover-ipm-badge">
+    <div class="cover-ipm-notice">
       <strong>Integrated Pest Management (IPM) Program</strong><br>
-      This binder contains all pest control documentation required for regulatory compliance, including pest sighting logs, technician response records, pesticide application records, and Pest Pro's license documentation. Retain all binders for a minimum of <strong>2 years</strong> per AHCA 59A-4 and Florida Department of Agriculture &amp; Consumer Services (FDACS) regulations. Available for AHCA inspection upon request.
+      This binder contains all pest control documentation required for regulatory compliance, including pest sighting logs, technician response records, and Pest Pro's license documentation. Retain all completed binders for a minimum of <strong>2 years</strong> per AHCA Rule 59A-4 and Florida Department of Agriculture &amp; Consumer Services (FDACS) regulations. Available for AHCA inspection upon request.<br><br>
+      <strong>Sighting logs</strong> are maintained at the <strong>Reception Area</strong>. Completed/stored logs are kept in the <strong>Maintenance Office</strong> and/or digitally.
     </div>
   </div>
 
   <div class="cover-bottom">
-    <div class="cover-contact-strip">
-      <div class="contact-item">
-        <span class="label">Service Provider</span>
-        <span class="val">Pest Pro, LLC</span>
-      </div>
-      <div class="contact-item">
-        <span class="label">Office</span>
-        <span class="val">(407) 922-2276</span>
-      </div>
-      <div class="contact-item">
-        <span class="label">Email</span>
-        <span class="val">info@PestProLLC.com</span>
-      </div>
-      <div class="contact-item">
-        <span class="label">License</span>
-        <span class="val">FDACS Licensed</span>
-      </div>
+    <div class="cover-contact-bar">
+      <div class="ci"><span class="cl">Service Provider</span><span class="cv">Pest Pro, LLC</span></div>
+      <div class="ci"><span class="cl">Office</span><span class="cv">(407) 922-2276</span></div>
+      <div class="ci"><span class="cl">Technician</span><span class="cv">David Kell</span></div>
+      <div class="ci"><span class="cl">Tech Cell</span><span class="cv">(407) 840-8852</span></div>
+      <div class="ci"><span class="cl">Service</span><span class="cv">Weekly</span></div>
     </div>
     <div class="cover-reg-note">
-      Maintained in accordance with AHCA Rule 59A-4 (Minimum Standards for Nursing Homes), Florida Statutes Chapter 388 (Pest Control), and Florida Department of Agriculture &amp; Consumer Services (FDACS) Chapter 5E-14 requirements.<br>
-      Questions? Contact Pest Pro at (407) 922-2276 or info@PestProLLC.com
+      Maintained in accordance with AHCA Rule 59A-4 (Minimum Standards for Nursing Homes / Rehabilitation Facilities), Florida Statutes Chapter 388 (Pest Control), FDACS Chapter 5E-14, and federal CMS §483.90 Physical Environment requirements.<br>
+      Questions? Contact Pest Pro: (407) 922-2276 · info@PestProLLC.com
     </div>
   </div>
 </div>
 </div>
 
 
-<!-- ======================================================== -->
-<!--  PAGE 2 — PROGRAM OVERVIEW & COMPLIANCE INFO             -->
-<!-- ======================================================== -->
+<!-- ================================================================ -->
+<!--  PAGE 2 — PROGRAM OVERVIEW & COMPLIANCE INFO                     -->
+<!-- ================================================================ -->
 <div class="page">
   <div class="page-header">
-    <div class="logo-block">
-      <div>
-        <div class="logo-text">PESTPRO</div>
-        <div class="logo-sub">Pest Sight Log — Rehabilitation Center of Orlando</div>
-      </div>
-    </div>
+    <img class="header-logo" src="logo.jpg" alt="Pest Pro">
     <div class="right-block">
-      <strong>Program Overview &amp; Compliance</strong>
+      <strong>Program Overview &amp; Compliance Reference</strong>
       <span>(407) 922-2276 · info@PestProLLC.com</span>
     </div>
   </div>
@@ -596,48 +287,44 @@
   <div class="info-grid">
     <div class="info-box">
       <h3>Facility Information</h3>
-      <div class="fill-line"><span style="color:#888;font-size:7pt;">Facility Name: </span>Rehabilitation Center of Orlando</div>
-      <div class="fill-line"><span style="color:#888;font-size:7pt;">Address: </span>9311 S. Orange Blossom Trail, Orlando, FL 32837</div>
-      <div class="fill-line"><span style="color:#888;font-size:7pt;">Phone: </span></div>
-      <div class="fill-line"><span style="color:#888;font-size:7pt;">AHCA License #: </span></div>
-      <div class="fill-line"><span style="color:#888;font-size:7pt;">Facility IPM Coordinator: </span></div>
-      <div class="fill-line"><span style="color:#888;font-size:7pt;">Coordinator Phone/Email: </span></div>
+      <div class="fill-line"><span style="color:#aaa;font-size:6.5pt;">Facility Name: </span>Rehabilitation Center of Orlando</div>
+      <div class="fill-line"><span style="color:#aaa;font-size:6.5pt;">Address: </span>9311 S. Orange Blossom Trail, Orlando, FL 32837</div>
+      <div class="fill-line"><span style="color:#aaa;font-size:6.5pt;">Facility Phone: </span></div>
+      <div class="fill-line"><span style="color:#aaa;font-size:6.5pt;">AHCA License #: </span></div>
+      <div class="fill-line"><span style="color:#aaa;font-size:6.5pt;">Facility IPM Coordinator: </span></div>
     </div>
     <div class="info-box">
       <h3>Pest Pro Service Information</h3>
-      <div class="fill-line"><span style="color:#888;font-size:7pt;">Company: </span>Pest Pro, LLC</div>
-      <div class="fill-line"><span style="color:#888;font-size:7pt;">Office: </span>(407) 922-2276</div>
-      <div class="fill-line"><span style="color:#888;font-size:7pt;">Email: </span>info@PestProLLC.com</div>
-      <div class="fill-line"><span style="color:#888;font-size:7pt;">Assigned Technician(s): </span></div>
-      <div class="fill-line"><span style="color:#888;font-size:7pt;">Tech Cell #: </span></div>
-      <div class="fill-line"><span style="color:#888;font-size:7pt;">Service Frequency: </span></div>
+      <div class="fill-line"><span style="color:#aaa;font-size:6.5pt;">Company: </span>Pest Pro, LLC</div>
+      <div class="fill-line"><span style="color:#aaa;font-size:6.5pt;">Office: </span>(407) 922-2276 · info@PestProLLC.com</div>
+      <div class="fill-line"><span style="color:#aaa;font-size:6.5pt;">Assigned Technician: </span>David Kell</div>
+      <div class="fill-line"><span style="color:#aaa;font-size:6.5pt;">Technician Cell: </span>(407) 840-8852</div>
+      <div class="fill-line"><span style="color:#aaa;font-size:6.5pt;">Service Frequency: </span>Weekly</div>
     </div>
     <div class="info-box">
       <h3>Regulatory References</h3>
       <ul>
-        <li>AHCA Rule 59A-4.1288 – Physical Environment</li>
+        <li>AHCA Rule 59A-4 – Minimum Standards for Nursing Homes</li>
+        <li>AHCA Rule 59A-3.278 – Rehabilitation Programs</li>
         <li>Florida Statutes §388 – Pest Control Act</li>
         <li>FDACS Chapter 5E-14 – Pest Control</li>
         <li>CMS §483.90 – Physical Environment (Federal)</li>
-        <li>NFPA 99 / NFPA 101 – Healthcare Facilities Code</li>
-        <li>Florida Statute §400 – Nursing Home Standards</li>
       </ul>
     </div>
     <div class="info-box">
-      <h3>Document Retention Requirements</h3>
+      <h3>Document Retention</h3>
       <ul>
         <li>Pest sighting logs: <strong>Minimum 2 years</strong></li>
-        <li>Pesticide application records: <strong>Minimum 2 years</strong></li>
-        <li>Service reports: <strong>Minimum 2 years</strong></li>
+        <li>Technician service reports: <strong>Minimum 2 years</strong></li>
+        <li>Pesticide application records: digital (FieldworkHQ / Excelsior systems)</li>
         <li>License &amp; insurance: Current at all times</li>
         <li>All records available to AHCA inspector upon request</li>
-        <li>Binders stored in Maintenance Department</li>
       </ul>
     </div>
   </div>
 
   <div class="section-title">Section 2 — Pest Codes &amp; Location Codes</div>
-  <p class="section-sub">Use these codes in the Pest Sight Log for quick, consistent documentation. Write the full pest/location name if not listed.</p>
+  <p class="section-sub">Use these codes in the Pest Sight Log for consistent documentation. Write the full pest or location name if not listed below.</p>
 
   <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px;">
     <div>
@@ -648,12 +335,12 @@
         <tr><td><strong>M</strong></td><td>Rodents (Mice / Rats)</td></tr>
         <tr><td><strong>S</strong></td><td>Spiders</td></tr>
         <tr><td><strong>F</strong></td><td>Flies / Gnats</td></tr>
-        <tr><td><strong>B</strong></td><td>Bed Bugs</td></tr>
-        <tr><td><strong>T</strong></td><td>Fleas / Ticks</td></tr>
-        <tr><td><strong>W</strong></td><td>Wasps / Bees / Yellow Jackets</td></tr>
-        <tr><td><strong>SC</strong></td><td>Scorpions</td></tr>
-        <tr><td><strong>SL</strong></td><td>Silverfish / Stored Product Pests</td></tr>
+        <tr><td><strong>I</strong></td><td>Bed Bugs</td></tr>
+        <tr><td><strong>D</strong></td><td>Fleas / Ticks</td></tr>
+        <tr><td><strong>W</strong></td><td>Wasps / Bees / Stinging Insects</td></tr>
         <tr><td><strong>MO</strong></td><td>Mosquitoes</td></tr>
+        <tr><td><strong>P</strong></td><td>Silverfish / Stored Product Pests</td></tr>
+        <tr><td><strong>B</strong></td><td>Unknown Pest</td></tr>
         <tr><td><strong>O</strong></td><td>Other (describe in notes)</td></tr>
       </table>
     </div>
@@ -670,6 +357,8 @@
         <tr><td><strong>MECH</strong></td><td>Mechanical / Utility Room</td></tr>
         <tr><td><strong>STOR</strong></td><td>Storage Room</td></tr>
         <tr><td><strong>LOBY</strong></td><td>Lobby / Reception</td></tr>
+        <tr><td><strong>CRT</strong></td><td>Courtyard / Patio</td></tr>
+        <tr><td><strong>OFF</strong></td><td>Office</td></tr>
         <tr><td><strong>EXT</strong></td><td>Exterior / Grounds</td></tr>
         <tr><td><strong>OTH</strong></td><td>Other (describe in notes)</td></tr>
       </table>
@@ -677,15 +366,16 @@
   </div>
 
   <div class="quick-guide">
-    <strong>How to Complete a Pest Sighting Entry (Staff Instructions):</strong><br>
+    <strong>How Staff Should Complete a Pest Sighting Entry:</strong>
     <ol>
-      <li>When you observe any pest, fill out the <em>gray "Staff Report" row</em> immediately. Record the date, time, location, pest type, and your name. Describe what you saw (live/dead, quantity, where exactly).</li>
-      <li>Contact the Facility IPM Coordinator or Maintenance immediately after completing the entry.</li>
-      <li>Do <strong>not</strong> apply any pesticide or attempt to treat the area yourself. Use approved sanitation protocols only.</li>
-      <li>The Pest Pro technician will complete the <em>yellow "Tech Response" row</em> when they respond.</li>
-      <li>All entries must be signed. No anonymous reports.</li>
+      <li>When you observe any pest, fill out the <em>white "Staff Report" row</em> immediately. Record the date, time, location code, pest type code, your name, and a brief description of what you saw.</li>
+      <li>Notify your supervisor and the Facility IPM Coordinator right away.</li>
+      <li><strong>Do not</strong> apply any pesticide or attempt to treat the area yourself.</li>
+      <li>The Pest Pro technician will complete the <em>shaded "Tech Response" row</em> when they respond.</li>
+      <li>All entries must be signed — no anonymous reports accepted.</li>
     </ol>
-    <strong>Urgent / Critical Pest Situations:</strong> Bed bugs or rodents in patient areas → notify Supervisor and IPM Coordinator immediately, isolate area if feasible, call Pest Pro directly at <strong>(407) 922-2276</strong>.
+    <br>
+    <strong>⚠️ Urgent / Critical Pest Situations</strong> (bed bugs, rodents, or stinging/biting insects in patient areas): Notify supervisor and IPM Coordinator immediately. Isolate the area if feasible. Call Pest Pro directly: <strong>(407) 922-2276</strong> · David Kell: <strong>(407) 840-8852</strong>.
   </div>
 
   <div class="page-footer">
@@ -696,24 +386,19 @@
 </div>
 
 
-<!-- ======================================================== -->
-<!--  PAGE 3 — LICENSE & INSURANCE (TAB DIVIDER PAGE)         -->
-<!-- ======================================================== -->
+<!-- ================================================================ -->
+<!--  PAGE 3 — LICENSE & CREDENTIALS SECTION                          -->
+<!-- ================================================================ -->
 <div class="page">
   <div class="page-header">
-    <div class="logo-block">
-      <div>
-        <div class="logo-text">PESTPRO</div>
-        <div class="logo-sub">Pest Sight Log — Rehabilitation Center of Orlando</div>
-      </div>
-    </div>
+    <img class="header-logo" src="logo.jpg" alt="Pest Pro">
     <div class="right-block">
-      <strong>Section 3 — Credentials &amp; License</strong>
+      <strong>Section 3 — Pest Pro Credentials &amp; License</strong>
       <span>(407) 922-2276 · info@PestProLLC.com</span>
     </div>
   </div>
 
-  <div class="section-title">Section 3 — Pest Pro License &amp; Insurance Documentation</div>
+  <div class="section-title">Section 3 — License &amp; Insurance Documentation</div>
   <p class="section-sub">The following documents are maintained in this section. Copies must remain current at all times. Contact Pest Pro at (407) 922-2276 to request updated copies.</p>
 
   <div class="info-grid">
@@ -721,32 +406,27 @@
       <h3>Documents Included in This Section</h3>
       <ul>
         <li>✅ Florida Pest Control Business License (FDACS)</li>
-        <li>✅ Certified Operator License (CPO)</li>
+        <li>✅ Certified Operator License (CPO) — Daniel Rumsey</li>
         <li>✅ General Liability Insurance Certificate (COI)</li>
-        <li>✅ Workers Compensation Insurance Certificate</li>
-        <li>☐ Current Service Agreement / Contract</li>
-        <li>☐ Applicator ID Cards (on-site technicians)</li>
       </ul>
     </div>
     <div class="info-box">
       <h3>License Reference</h3>
-      <div class="fill-line"><span style="color:#888;font-size:7pt;">FDACS Business License #: </span></div>
-      <div class="fill-line"><span style="color:#888;font-size:7pt;">License Type: </span>Pest Control / General Household</div>
-      <div class="fill-line"><span style="color:#888;font-size:7pt;">Licensed Operator: </span>Daniel Rumsey, CPO</div>
-      <div class="fill-line"><span style="color:#888;font-size:7pt;">License Expiration: </span></div>
-      <div class="fill-line"><span style="color:#888;font-size:7pt;">Insurance Expiration: </span></div>
-      <div class="fill-line"><span style="color:#888;font-size:7pt;">Last Verified By Facility: </span></div>
+      <div class="fill-line"><span style="color:#aaa;font-size:6.5pt;">FDACS Business License #: </span></div>
+      <div class="fill-line"><span style="color:#aaa;font-size:6.5pt;">License Type: </span>Pest Control / General Household</div>
+      <div class="fill-line"><span style="color:#aaa;font-size:6.5pt;">Licensed Operator: </span>Daniel Rumsey, CPO</div>
+      <div class="fill-line"><span style="color:#aaa;font-size:6.5pt;">License Expiration: </span></div>
+      <div class="fill-line"><span style="color:#aaa;font-size:6.5pt;">Insurance Expiration: </span></div>
     </div>
   </div>
 
-  <div style="border:2px dashed var(--mid-gray); min-height:4in; display:flex; align-items:center; justify-content:center; border-radius:4px; color:#bbb; font-size:11pt; font-weight:bold; letter-spacing:1px; flex-direction:column; gap:8px; margin-bottom:14px;">
-    <span>📋 LICENSE &amp; INSURANCE DOCUMENTS</span>
-    <span style="font-size:8pt; font-weight:normal; color:#ccc;">Insert printed copies of FDACS license, CPO license, and insurance certificates here</span>
+  <div style="border: 1.5px dashed #ccc; min-height: 5in; display: flex; align-items: center; justify-content: center; border-radius: 4px; flex-direction: column; gap: 10px; color: #ccc;">
+    <div style="font-size:13pt; font-weight:bold; letter-spacing:1px;">📋 INSERT LICENSE &amp; INSURANCE DOCUMENTS HERE</div>
+    <div style="font-size:8pt; color:#ddd;">Printed copies of FDACS Business License, CPO License, and Certificate of Insurance</div>
   </div>
 
-  <div class="info-box" style="border-color:var(--yellow); border-width:2px;">
-    <h3>⚠️ Important Compliance Note</h3>
-    <p>Florida law requires that a copy of the pest control business license be <strong>conspicuously displayed</strong> at the physical address listed on the license. Per FDACS Chapter 5E-14.113, the licensed operator must be available and supervising all pest control activities at this facility. All pesticide applications must be performed by or under the direct supervision of a licensed pest control technician. This facility may request proof of technician certification at any time.</p>
+  <div style="margin-top:14px; background:#f7f7f7; border: 1px solid #ddd; border-left: 4px solid var(--navy); padding: 9px 14px; font-size: 7.5pt; color: #555; line-height: 1.7; border-radius: 3px;">
+    <strong>Compliance Notice:</strong> Florida law requires that a copy of the pest control business license be conspicuously displayed at the physical address listed on the license. Per FDACS Chapter 5E-14.113, all pesticide applications must be performed by or under the direct supervision of a licensed pest control technician. This facility may request proof of technician certification at any time by calling (407) 922-2276.
   </div>
 
   <div class="page-footer">
@@ -757,113 +437,127 @@
 </div>
 
 
-<!-- ======================================================== -->
-<!--  PAGES 4–8 — PEST SIGHTING LOG (5 pages, 8 entries each) -->
-<!-- ======================================================== -->
-
-<!-- Helper: repeat for multiple log pages -->
-<!-- PAGE 4 -->
+<!-- ================================================================ -->
+<!--  PAGE 4 — SIGHTING LOG (8 entries)                               -->
+<!-- ================================================================ -->
 <div class="page">
   <div class="page-header">
-    <div class="logo-block">
-      <div>
-        <div class="logo-text">PESTPRO</div>
-        <div class="logo-sub">Pest Sight Log — Rehabilitation Center of Orlando</div>
-      </div>
-    </div>
+    <img class="header-logo" src="logo.jpg" alt="Pest Pro">
     <div class="right-block">
       <strong>Section 4 — Pest Sighting Log</strong>
-      <span>Month/Year: _________________ &nbsp;|&nbsp; Page: ___ of ___</span>
+      <span>Month / Year: ___________________</span>
     </div>
   </div>
 
   <div class="section-title">Section 4 — Pest Sighting &amp; Technician Response Log</div>
+  <p class="section-sub" style="font-size:7pt; margin-bottom:6px;"><em>White rows = Staff Report. Shaded rows = Technician Response. Both rows must be completed for each sighting.</em></p>
 
   <table>
     <thead>
       <tr>
-        <th style="width:20px;">#</th>
-        <th style="width:58px;">Date<br><span style="font-weight:normal;font-size:6.5pt;">(MM/DD/YY)</span></th>
-        <th style="width:44px;">Time<br><span style="font-weight:normal;font-size:6.5pt;">(HH:MM)</span></th>
-        <th style="width:60px;">Location<br><span style="font-weight:normal;font-size:6.5pt;">Room/Area + Code</span></th>
-        <th style="width:50px;">Pest Type<br><span style="font-weight:normal;font-size:6.5pt;">Code + Description</span></th>
-        <th style="width:44px;">Live/<br>Dead/<br>Evidence</th>
-        <th style="width:40px;">Qty<br><span style="font-weight:normal;font-size:6.5pt;">(Approx)</span></th>
-        <th>Description / Notes<br><span style="font-weight:normal;font-size:6.5pt;">What was observed, exact location, conditions</span></th>
-        <th style="width:80px;">Reported By<br><span style="font-weight:normal;font-size:6.5pt;">Name + Title + Signature</span></th>
+        <th style="width:18px;">#</th>
+        <th style="width:54px;">Date<br><span style="font-weight:normal;">(MM/DD/YY)</span></th>
+        <th style="width:40px;">Time</th>
+        <th style="width:55px;">Location<br><span style="font-weight:normal;">Code + Room</span></th>
+        <th style="width:46px;">Pest Type<br><span style="font-weight:normal;">Code</span></th>
+        <th style="width:44px;">Live / Dead / Evidence</th>
+        <th style="width:36px;">Qty</th>
+        <th>Description &amp; Exact Location<br><span style="font-weight:normal;">What was seen, where exactly, conditions noted</span></th>
+        <th style="width:78px;">Reported By<br><span style="font-weight:normal;">Name, Title, Signature</span></th>
       </tr>
     </thead>
     <tbody>
 
-      <!-- Entry 1 -->
-      <tr>
-        <td class="row-num">1</td>
-        <td></td><td></td><td></td><td></td><td></td><td></td>
-        <td><span style="color:#aaa;font-size:7pt;font-style:italic;">Staff completes this row →</span></td>
-        <td></td>
-      </tr>
-      <tr class="tech-row">
-        <td style="background:var(--yellow)!important; text-align:center; font-size:6.5pt; font-weight:bold; color:var(--navy); vertical-align:middle;">TECH</td>
-        <td><span class="tech-label">Date Responded</span><br></td>
-        <td><span class="tech-label">Time In</span><br></td>
-        <td><span class="tech-label">Pest Found?</span><br></td>
-        <td><span class="tech-label">Action Taken</span></td>
-        <td><span class="tech-label">Product(s) Used</span></td>
-        <td><span class="tech-label">Status</span></td>
-        <td><span class="tech-label">Follow-Up Required? (Y/N) &nbsp; Next Visit: ___________</span><br><br></td>
-        <td><span class="tech-label">Tech Name + Lic # + Sig</span><br></td>
-      </tr>
+<!-- Entry 1 -->
+<tr><td class="row-num">1</td><td></td><td></td><td></td><td></td><td></td><td></td><td style="color:#bbb; font-size:7pt; font-style:italic;">Staff completes this row →</td><td></td></tr>
+<tr class="tech-row">
+  <td class="row-flag">TECH</td>
+  <td><span class="fl">Date Responded</span></td>
+  <td><span class="fl">Time In</span></td>
+  <td><span class="fl">Pest Found?</span></td>
+  <td><span class="fl">Action Taken</span></td>
+  <td><span class="fl">Product Used</span></td>
+  <td><span class="fl">Status</span></td>
+  <td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td>
+  <td><span class="fl">Tech Name &amp; Signature</span></td>
+</tr>
 
-      <!-- Entry 2 -->
-      <tr>
-        <td class="row-num">2</td>
-        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      </tr>
-      <tr class="tech-row">
-        <td style="background:var(--yellow)!important; text-align:center; font-size:6.5pt; font-weight:bold; color:var(--navy); vertical-align:middle;">TECH</td>
-        <td><span class="tech-label">Date Responded</span><br></td>
-        <td><span class="tech-label">Time In</span><br></td>
-        <td><span class="tech-label">Pest Found?</span><br></td>
-        <td><span class="tech-label">Action Taken</span></td>
-        <td><span class="tech-label">Product(s) Used</span></td>
-        <td><span class="tech-label">Status</span></td>
-        <td><span class="tech-label">Follow-Up Required? (Y/N) &nbsp; Next Visit: ___________</span><br><br></td>
-        <td><span class="tech-label">Tech Name + Lic # + Sig</span><br></td>
-      </tr>
+<!-- Entry 2 -->
+<tr><td class="row-num">2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+  <td class="row-flag">TECH</td>
+  <td><span class="fl">Date Responded</span></td><td><span class="fl">Time In</span></td>
+  <td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td>
+  <td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td>
+  <td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td>
+  <td><span class="fl">Tech Name &amp; Signature</span></td>
+</tr>
 
-      <!-- Entry 3 -->
-      <tr>
-        <td class="row-num">3</td>
-        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      </tr>
-      <tr class="tech-row">
-        <td style="background:var(--yellow)!important; text-align:center; font-size:6.5pt; font-weight:bold; color:var(--navy); vertical-align:middle;">TECH</td>
-        <td><span class="tech-label">Date Responded</span><br></td>
-        <td><span class="tech-label">Time In</span><br></td>
-        <td><span class="tech-label">Pest Found?</span><br></td>
-        <td><span class="tech-label">Action Taken</span></td>
-        <td><span class="tech-label">Product(s) Used</span></td>
-        <td><span class="tech-label">Status</span></td>
-        <td><span class="tech-label">Follow-Up Required? (Y/N) &nbsp; Next Visit: ___________</span><br><br></td>
-        <td><span class="tech-label">Tech Name + Lic # + Sig</span><br></td>
-      </tr>
+<!-- Entry 3 -->
+<tr><td class="row-num">3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+  <td class="row-flag">TECH</td>
+  <td><span class="fl">Date Responded</span></td><td><span class="fl">Time In</span></td>
+  <td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td>
+  <td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td>
+  <td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td>
+  <td><span class="fl">Tech Name &amp; Signature</span></td>
+</tr>
 
-      <!-- Entry 4 -->
-      <tr>
-        <td class="row-num">4</td>
-        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-      </tr>
-      <tr class="tech-row">
-        <td style="background:var(--yellow)!important; text-align:center; font-size:6.5pt; font-weight:bold; color:var(--navy); vertical-align:middle;">TECH</td>
-        <td><span class="tech-label">Date Responded</span><br></td>
-        <td><span class="tech-label">Time In</span><br></td>
-        <td><span class="tech-label">Pest Found?</span><br></td>
-        <td><span class="tech-label">Action Taken</span></td>
-        <td><span class="tech-label">Product(s) Used</span></td>
-        <td><span class="tech-label">Status</span></td>
-        <td><span class="tech-label">Follow-Up Required? (Y/N) &nbsp; Next Visit: ___________</span><br><br></td>
-        <td><span class="tech-label">Tech Name + Lic # + Sig</span><br></td>
-      </tr>
+<!-- Entry 4 -->
+<tr><td class="row-num">4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+  <td class="row-flag">TECH</td>
+  <td><span class="fl">Date Responded</span></td><td><span class="fl">Time In</span></td>
+  <td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td>
+  <td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td>
+  <td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td>
+  <td><span class="fl">Tech Name &amp; Signature</span></td>
+</tr>
+
+<!-- Entry 5 -->
+<tr><td class="row-num">5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+  <td class="row-flag">TECH</td>
+  <td><span class="fl">Date Responded</span></td><td><span class="fl">Time In</span></td>
+  <td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td>
+  <td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td>
+  <td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td>
+  <td><span class="fl">Tech Name &amp; Signature</span></td>
+</tr>
+
+<!-- Entry 6 -->
+<tr><td class="row-num">6</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+  <td class="row-flag">TECH</td>
+  <td><span class="fl">Date Responded</span></td><td><span class="fl">Time In</span></td>
+  <td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td>
+  <td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td>
+  <td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td>
+  <td><span class="fl">Tech Name &amp; Signature</span></td>
+</tr>
+
+<!-- Entry 7 -->
+<tr><td class="row-num">7</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+  <td class="row-flag">TECH</td>
+  <td><span class="fl">Date Responded</span></td><td><span class="fl">Time In</span></td>
+  <td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td>
+  <td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td>
+  <td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td>
+  <td><span class="fl">Tech Name &amp; Signature</span></td>
+</tr>
+
+<!-- Entry 8 -->
+<tr><td class="row-num">8</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+  <td class="row-flag">TECH</td>
+  <td><span class="fl">Date Responded</span></td><td><span class="fl">Time In</span></td>
+  <td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td>
+  <td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td>
+  <td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td>
+  <td><span class="fl">Tech Name &amp; Signature</span></td>
+</tr>
 
     </tbody>
   </table>
@@ -876,74 +570,59 @@
 </div>
 
 
-<!-- PAGE 5 — Sighting Log continued -->
+<!-- ================================================================ -->
+<!--  PAGE 5 — SIGHTING LOG continued                                 -->
+<!-- ================================================================ -->
 <div class="page">
   <div class="page-header">
-    <div class="logo-block"><div>
-      <div class="logo-text">PESTPRO</div>
-      <div class="logo-sub">Pest Sight Log — Rehabilitation Center of Orlando</div>
-    </div></div>
+    <img class="header-logo" src="logo.jpg" alt="Pest Pro">
     <div class="right-block">
       <strong>Section 4 — Pest Sighting Log (continued)</strong>
-      <span>Month/Year: _________________ &nbsp;|&nbsp; Page: ___ of ___</span>
+      <span>Month / Year: ___________________</span>
     </div>
   </div>
 
   <table>
     <thead>
       <tr>
-        <th style="width:20px;">#</th>
-        <th style="width:58px;">Date<br><span style="font-weight:normal;font-size:6.5pt;">(MM/DD/YY)</span></th>
-        <th style="width:44px;">Time<br><span style="font-weight:normal;font-size:6.5pt;">(HH:MM)</span></th>
-        <th style="width:60px;">Location<br><span style="font-weight:normal;font-size:6.5pt;">Room/Area + Code</span></th>
-        <th style="width:50px;">Pest Type<br><span style="font-weight:normal;font-size:6.5pt;">Code + Description</span></th>
-        <th style="width:44px;">Live/<br>Dead/<br>Evidence</th>
-        <th style="width:40px;">Qty<br><span style="font-weight:normal;font-size:6.5pt;">(Approx)</span></th>
-        <th>Description / Notes</th>
-        <th style="width:80px;">Reported By<br><span style="font-weight:normal;font-size:6.5pt;">Name + Title + Sig</span></th>
+        <th style="width:18px;">#</th>
+        <th style="width:54px;">Date<br><span style="font-weight:normal;">(MM/DD/YY)</span></th>
+        <th style="width:40px;">Time</th>
+        <th style="width:55px;">Location<br><span style="font-weight:normal;">Code + Room</span></th>
+        <th style="width:46px;">Pest Type<br><span style="font-weight:normal;">Code</span></th>
+        <th style="width:44px;">Live / Dead / Evidence</th>
+        <th style="width:36px;">Qty</th>
+        <th>Description &amp; Exact Location</th>
+        <th style="width:78px;">Reported By<br><span style="font-weight:normal;">Name, Title, Sig.</span></th>
       </tr>
     </thead>
     <tbody>
-      <!-- Entry 5 -->
-      <tr><td class="row-num">5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr class="tech-row">
-        <td style="background:var(--yellow)!important; text-align:center; font-size:6.5pt; font-weight:bold; color:var(--navy); vertical-align:middle;">TECH</td>
-        <td><span class="tech-label">Date Responded</span><br></td><td><span class="tech-label">Time In</span><br></td>
-        <td><span class="tech-label">Pest Found?</span><br></td><td><span class="tech-label">Action Taken</span></td>
-        <td><span class="tech-label">Product(s) Used</span></td><td><span class="tech-label">Status</span></td>
-        <td><span class="tech-label">Follow-Up Required? (Y/N) &nbsp; Next Visit: ___________</span><br><br></td>
-        <td><span class="tech-label">Tech Name + Lic # + Sig</span><br></td>
-      </tr>
-      <!-- Entry 6 -->
-      <tr><td class="row-num">6</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr class="tech-row">
-        <td style="background:var(--yellow)!important; text-align:center; font-size:6.5pt; font-weight:bold; color:var(--navy); vertical-align:middle;">TECH</td>
-        <td><span class="tech-label">Date Responded</span><br></td><td><span class="tech-label">Time In</span><br></td>
-        <td><span class="tech-label">Pest Found?</span><br></td><td><span class="tech-label">Action Taken</span></td>
-        <td><span class="tech-label">Product(s) Used</span></td><td><span class="tech-label">Status</span></td>
-        <td><span class="tech-label">Follow-Up Required? (Y/N) &nbsp; Next Visit: ___________</span><br><br></td>
-        <td><span class="tech-label">Tech Name + Lic # + Sig</span><br></td>
-      </tr>
-      <!-- Entry 7 -->
-      <tr><td class="row-num">7</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr class="tech-row">
-        <td style="background:var(--yellow)!important; text-align:center; font-size:6.5pt; font-weight:bold; color:var(--navy); vertical-align:middle;">TECH</td>
-        <td><span class="tech-label">Date Responded</span><br></td><td><span class="tech-label">Time In</span><br></td>
-        <td><span class="tech-label">Pest Found?</span><br></td><td><span class="tech-label">Action Taken</span></td>
-        <td><span class="tech-label">Product(s) Used</span></td><td><span class="tech-label">Status</span></td>
-        <td><span class="tech-label">Follow-Up Required? (Y/N) &nbsp; Next Visit: ___________</span><br><br></td>
-        <td><span class="tech-label">Tech Name + Lic # + Sig</span><br></td>
-      </tr>
-      <!-- Entry 8 -->
-      <tr><td class="row-num">8</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr class="tech-row">
-        <td style="background:var(--yellow)!important; text-align:center; font-size:6.5pt; font-weight:bold; color:var(--navy); vertical-align:middle;">TECH</td>
-        <td><span class="tech-label">Date Responded</span><br></td><td><span class="tech-label">Time In</span><br></td>
-        <td><span class="tech-label">Pest Found?</span><br></td><td><span class="tech-label">Action Taken</span></td>
-        <td><span class="tech-label">Product(s) Used</span></td><td><span class="tech-label">Status</span></td>
-        <td><span class="tech-label">Follow-Up Required? (Y/N) &nbsp; Next Visit: ___________</span><br><br></td>
-        <td><span class="tech-label">Tech Name + Lic # + Sig</span><br></td>
-      </tr>
+
+<!-- Entries 9–16 (same pattern) -->
+<tr><td class="row-num">9</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row"><td class="row-flag">TECH</td><td><span class="fl">Date Responded</span></td><td><span class="fl">Time In</span></td><td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td><td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td><td><span class="fl">Tech Name &amp; Sig.</span></td></tr>
+
+<tr><td class="row-num">10</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row"><td class="row-flag">TECH</td><td><span class="fl">Date Responded</span></td><td><span class="fl">Time In</span></td><td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td><td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td><td><span class="fl">Tech Name &amp; Sig.</span></td></tr>
+
+<tr><td class="row-num">11</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row"><td class="row-flag">TECH</td><td><span class="fl">Date Responded</span></td><td><span class="fl">Time In</span></td><td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td><td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td><td><span class="fl">Tech Name &amp; Sig.</span></td></tr>
+
+<tr><td class="row-num">12</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row"><td class="row-flag">TECH</td><td><span class="fl">Date Responded</span></td><td><span class="fl">Time In</span></td><td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td><td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td><td><span class="fl">Tech Name &amp; Sig.</span></td></tr>
+
+<tr><td class="row-num">13</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row"><td class="row-flag">TECH</td><td><span class="fl">Date Responded</span></td><td><span class="fl">Time In</span></td><td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td><td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td><td><span class="fl">Tech Name &amp; Sig.</span></td></tr>
+
+<tr><td class="row-num">14</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row"><td class="row-flag">TECH</td><td><span class="fl">Date Responded</span></td><td><span class="fl">Time In</span></td><td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td><td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td><td><span class="fl">Tech Name &amp; Sig.</span></td></tr>
+
+<tr><td class="row-num">15</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row"><td class="row-flag">TECH</td><td><span class="fl">Date Responded</span></td><td><span class="fl">Time In</span></td><td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td><td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td><td><span class="fl">Tech Name &amp; Sig.</span></td></tr>
+
+<tr><td class="row-num">16</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row"><td class="row-flag">TECH</td><td><span class="fl">Date Responded</span></td><td><span class="fl">Time In</span></td><td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td><td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td><td><span class="fl">Tech Name &amp; Sig.</span></td></tr>
+
     </tbody>
   </table>
 
@@ -955,95 +634,35 @@
 </div>
 
 
-<!-- ======================================================== -->
-<!--  PAGE 6 — SCHEDULED SERVICE LOG (Technician Visit Log)   -->
-<!-- ======================================================== -->
+<!-- ================================================================ -->
+<!--  PAGE 6 — SCHEDULED SERVICE LOG                                  -->
+<!-- ================================================================ -->
 <div class="page">
   <div class="page-header">
-    <div class="logo-block"><div>
-      <div class="logo-text">PESTPRO</div>
-      <div class="logo-sub">Pest Sight Log — Rehabilitation Center of Orlando</div>
-    </div></div>
+    <img class="header-logo" src="logo.jpg" alt="Pest Pro">
     <div class="right-block">
       <strong>Section 5 — Scheduled Service Log</strong>
-      <span>Year: _________________ </span>
+      <span>Year: _____________</span>
     </div>
   </div>
 
   <div class="section-title">Section 5 — Scheduled Pest Control Service Log</div>
-  <p class="section-sub">Completed by the Pest Pro technician at each scheduled visit. One row per service date. Retain with this binder.</p>
-
-  <table class="service-table">
-    <thead>
-      <tr>
-        <th style="width:24px;">#</th>
-        <th style="width:64px;">Service Date</th>
-        <th style="width:44px;">Time In</th>
-        <th style="width:44px;">Time Out</th>
-        <th style="width:80px;">Areas Serviced</th>
-        <th style="width:50px;">Service Type<br><span style="font-weight:normal;font-size:6.5pt;">GHP / Rodent / Spot / Inspect</span></th>
-        <th>Findings / Activity Noted<br><span style="font-weight:normal;font-size:6.5pt;">Pest activity, entry points, sanitation issues</span></th>
-        <th style="width:90px;">Products / Methods Used<br><span style="font-weight:normal;font-size:6.5pt;">Product name, EPA reg#, target pest</span></th>
-        <th style="width:48px;">Follow-Up<br>Required?</th>
-        <th style="width:80px;">Technician<br>Name + Lic # + Sig</th>
-        <th style="width:72px;">Facility Rep<br>Signature</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td class="row-num">1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td class="row-num">2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td class="row-num">3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td class="row-num">4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td class="row-num">5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td class="row-num">6</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td class="row-num">7</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td class="row-num">8</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td class="row-num">9</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td class="row-num">10</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td class="row-num">11</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-      <tr><td class="row-num">12</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-    </tbody>
-  </table>
-
-  <div class="page-footer">
-    <span>Pest Pro, LLC · (407) 922-2276 · info@PestProLLC.com</span>
-    <span>Rehabilitation Center of Orlando — Pest Sight Log</span>
-    <span>Page 6 · Section 5</span>
-  </div>
-</div>
-
-
-<!-- ======================================================== -->
-<!--  PAGE 7 — PESTICIDE APPLICATION RECORD                   -->
-<!-- ======================================================== -->
-<div class="page">
-  <div class="page-header">
-    <div class="logo-block"><div>
-      <div class="logo-text">PESTPRO</div>
-      <div class="logo-sub">Pest Sight Log — Rehabilitation Center of Orlando</div>
-    </div></div>
-    <div class="right-block">
-      <strong>Section 6 — Pesticide Application Record</strong>
-      <span>FDACS 5E-14 Required Documentation</span>
-    </div>
-  </div>
-
-  <div class="section-title">Section 6 — Pesticide Application Record (FDACS Required)</div>
-  <p class="section-sub">Florida law (FDACS Chapter 5E-14) requires pest control companies to maintain application records for all pesticides used. This log satisfies that requirement for applications performed at this facility. Records must be retained a minimum of 2 years.</p>
+  <p class="section-sub">Completed by the Pest Pro technician at each scheduled weekly visit. One row per service date. Service frequency: <strong>Weekly</strong> — Technician: <strong>David Kell · (407) 840-8852</strong></p>
+  <p class="section-sub" style="font-size:7pt;"><em>Note: Pesticide application records (product name, EPA reg #, quantities) are maintained digitally via FieldworkHQ and Excelsior's work order systems per facility policy.</em></p>
 
   <table>
     <thead>
       <tr>
-        <th style="width:24px;">#</th>
-        <th style="width:60px;">Date of<br>Application</th>
-        <th style="width:80px;">Product Name<br><span style="font-weight:normal;font-size:6.5pt;">Brand Name</span></th>
-        <th style="width:70px;">EPA Reg. #<br><span style="font-weight:normal;font-size:6.5pt;">From label</span></th>
-        <th style="width:56px;">Active<br>Ingredient</th>
-        <th style="width:52px;">Formulation<br><span style="font-weight:normal;font-size:6.5pt;">Conc. / Dilution</span></th>
-        <th style="width:40px;">Qty<br>Used</th>
-        <th style="width:70px;">Application<br>Method</th>
-        <th>Area(s) Treated<br><span style="font-weight:normal;font-size:6.5pt;">Location + Target Pest</span></th>
-        <th style="width:80px;">Applicator<br>Name + Lic # + Sig</th>
+        <th style="width:22px;">#</th>
+        <th style="width:60px;">Service Date</th>
+        <th style="width:44px;">Time In</th>
+        <th style="width:44px;">Time Out</th>
+        <th style="width:85px;">Areas Serviced</th>
+        <th style="width:55px;">Service Type<br><span style="font-weight:normal;">GHP / Rodent / Spot / Inspect</span></th>
+        <th>Findings &amp; Activity Noted<br><span style="font-weight:normal;">Pest activity, entry points, sanitation issues observed</span></th>
+        <th style="width:55px;">Follow-Up Required?</th>
+        <th style="width:90px;">Technician<br>Name &amp; Signature</th>
+        <th style="width:80px;">Facility Rep<br>Signature</th>
       </tr>
     </thead>
     <tbody>
@@ -1059,92 +678,81 @@
       <tr><td class="row-num">10</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
       <tr><td class="row-num">11</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
       <tr><td class="row-num">12</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="row-num">13</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
     </tbody>
   </table>
-
-  <div style="margin-top:12px; font-size:7.5pt; color:#666; line-height:1.6; border:1px solid var(--mid-gray); padding:8px 10px; border-radius:3px;">
-    <strong>Notice to Facility:</strong> All products applied by Pest Pro are registered with the U.S. Environmental Protection Agency (EPA) and approved for use in healthcare settings. Safety Data Sheets (SDS) for any product used at this facility are available upon request. Contact Pest Pro at (407) 922-2276. Pest Pro follows IPM principles: pesticide application is a last resort, used only when necessary and applied in targeted, low-exposure methods appropriate for occupied healthcare facilities.
-  </div>
 
   <div class="page-footer">
     <span>Pest Pro, LLC · (407) 922-2276 · info@PestProLLC.com</span>
     <span>Rehabilitation Center of Orlando — Pest Sight Log</span>
-    <span>Page 7 · Section 6</span>
+    <span>Page 6 · Section 5</span>
   </div>
 </div>
 
 
-<!-- ======================================================== -->
-<!--  PAGE 8 — STAFF TRAINING & IPM POLICY                    -->
-<!-- ======================================================== -->
+<!-- ================================================================ -->
+<!--  PAGE 7 — IPM POLICY & STAFF TRAINING                            -->
+<!-- ================================================================ -->
 <div class="page">
   <div class="page-header">
-    <div class="logo-block"><div>
-      <div class="logo-text">PESTPRO</div>
-      <div class="logo-sub">Pest Sight Log — Rehabilitation Center of Orlando</div>
-    </div></div>
+    <img class="header-logo" src="logo.jpg" alt="Pest Pro">
     <div class="right-block">
-      <strong>Section 7 — IPM Policy &amp; Staff Training</strong>
+      <strong>Section 6 — IPM Policy &amp; Staff Training</strong>
     </div>
   </div>
 
-  <div class="section-title">Section 7 — Facility IPM Policy &amp; Staff Awareness Training Log</div>
+  <div class="section-title">Section 6 — Facility IPM Policy &amp; Staff Awareness Training Log</div>
 
   <div class="info-grid">
-    <div class="info-box" style="grid-column:1 / -1;">
+    <div class="info-box" style="grid-column: 1 / -1;">
       <h3>Integrated Pest Management (IPM) Policy — Rehabilitation Center of Orlando</h3>
-      <p>This facility is committed to a proactive, Integrated Pest Management approach to pest control in partnership with Pest Pro, LLC. IPM prioritizes prevention, monitoring, and documentation over reactive chemical treatment, with the goal of protecting patient health, staff safety, and regulatory compliance.</p>
+      <p>This facility maintains an Integrated Pest Management program in partnership with Pest Pro, LLC. IPM prioritizes prevention, monitoring, and documentation to protect patient health, staff safety, and regulatory compliance.</p>
       <br>
-      <p><strong>Core IPM Principles at this facility:</strong></p>
-      <ul style="margin-top:6px;">
-        <li><strong>Prevention first:</strong> Sanitation, structural exclusion, and elimination of harborage sites are the first line of defense.</li>
-        <li><strong>Staff involvement:</strong> All staff are expected to report pest sightings using this log. No sighting is too minor to report.</li>
+      <p><strong>Core Principles:</strong></p>
+      <ul style="margin-top:5px;">
+        <li><strong>Prevention first:</strong> Sanitation, structural exclusion, and elimination of harborage sites are the primary defense.</li>
+        <li><strong>Staff involvement:</strong> All staff must report pest sightings using this log — no sighting is too minor. Logs are maintained at the Reception Area.</li>
         <li><strong>No self-treatment:</strong> Staff must not apply any pesticide or pest control product. All treatment is performed by licensed Pest Pro technicians only.</li>
-        <li><strong>Documentation:</strong> All sightings and technician responses are logged in this binder, which is maintained in the Maintenance Department and available to AHCA inspectors at all times.</li>
-        <li><strong>Communication:</strong> Pest Pro will notify the facility IPM Coordinator of any significant findings, recommended facility-side actions, or follow-up required.</li>
+        <li><strong>Documentation:</strong> All sightings and responses are logged in this binder. Pesticide application records are maintained digitally via FieldworkHQ and Excelsior's work order systems. All records available to AHCA inspectors upon request.</li>
+        <li><strong>Communication:</strong> Pest Pro will notify the IPM Coordinator of significant findings, recommended facility actions, or required follow-up.</li>
       </ul>
     </div>
-
     <div class="info-box">
-      <h3>Staff Responsibilities — Quick Reference</h3>
+      <h3>Staff Responsibilities</h3>
       <ul>
-        <li>Report <strong>any</strong> pest sighting immediately</li>
-        <li>Complete the Staff row in the Pest Sighting Log</li>
-        <li>Notify supervisor and IPM Coordinator</li>
+        <li>Report any pest sighting immediately in this log</li>
+        <li>Notify supervisor and IPM Coordinator right away</li>
         <li>Do <strong>NOT</strong> apply sprays, traps, or any pesticide</li>
         <li>Do not move or disturb pests or evidence</li>
-        <li>For bed bugs or rodents in patient areas: isolate room, notify charge nurse, call Pest Pro directly at <strong>(407) 922-2276</strong></li>
+        <li>For bed bugs, rodents, or stinging/biting insects in patient areas: isolate room, notify charge nurse, call Pest Pro directly: <strong>(407) 922-2276</strong> or David Kell: <strong>(407) 840-8852</strong></li>
         <li>Maintain clean, dry, clutter-free work areas</li>
-        <li>Report sanitation or structural issues (leaks, gaps, etc.) to Maintenance</li>
       </ul>
     </div>
-
     <div class="info-box">
       <h3>Maintenance Responsibilities</h3>
       <ul>
-        <li>Maintain this binder — current, organized, available</li>
-        <li>Coordinate with Pest Pro for scheduled visits</li>
+        <li>Maintain this binder — current, organized, accessible at Reception</li>
+        <li>Coordinate with Pest Pro for weekly service visits</li>
         <li>Ensure access to all service areas during technician visits</li>
-        <li>Complete facility-side recommendations within reasonable timeframe</li>
-        <li>Maintain door seals, screens, and structural exclusion</li>
-        <li>Manage trash/waste removal frequency and container condition</li>
-        <li>Ensure kitchen/dining sanitation standards are maintained</li>
-        <li>Contact Pest Pro for any urgent / between-service sightings</li>
+        <li>Complete facility-side recommendations promptly</li>
+        <li>Maintain door sweeps, screens, and structural exclusion</li>
+        <li>Manage trash removal frequency and container conditions</li>
+        <li>Transfer completed logs to Maintenance Office for storage</li>
       </ul>
     </div>
   </div>
 
-  <div class="section-title" style="margin-top:14px;">Staff Training / Acknowledgment Log</div>
-  <p class="section-sub">Record all staff who have received pest control awareness training or binder orientation. This log may be requested during AHCA inspections.</p>
+  <div class="section-title" style="margin-top:12px;">Staff Training / Binder Acknowledgment Log</div>
+  <p class="section-sub">Record all staff who have received pest awareness orientation or binder walk-through. May be requested during AHCA inspections.</p>
 
   <table>
     <thead>
       <tr>
-        <th style="width:24px;">#</th>
+        <th style="width:22px;">#</th>
         <th>Staff Name</th>
         <th style="width:90px;">Title / Department</th>
-        <th style="width:72px;">Training Date</th>
-        <th style="width:90px;">Training Type<br><span style="font-weight:normal;font-size:6.5pt;">Orientation / IPM Policy / Binder Walk-Through</span></th>
+        <th style="width:70px;">Training Date</th>
+        <th style="width:100px;">Training Type<br><span style="font-weight:normal;">Orientation / Binder Review / IPM Policy</span></th>
         <th style="width:100px;">Trained By</th>
         <th style="width:100px;">Staff Signature</th>
       </tr>
@@ -1164,17 +772,17 @@
   <div class="page-footer">
     <span>Pest Pro, LLC · (407) 922-2276 · info@PestProLLC.com</span>
     <span>Rehabilitation Center of Orlando — Pest Sight Log</span>
-    <span>Page 8 · Section 7</span>
+    <span>Page 7 · Section 6</span>
   </div>
 </div>
 
 
-<!-- ======================================================== -->
-<!--  PAGE 9 — REAR COVER                                     -->
-<!-- ======================================================== -->
+<!-- ================================================================ -->
+<!--  PAGE 8 — REAR COVER (white background, navy border)             -->
+<!-- ================================================================ -->
 <div class="page" style="padding:0;">
 <div class="rear-cover">
-  <div class="rear-logo">PESTPRO</div>
+  <img class="rear-logo" src="logo.jpg" alt="Pest Pro Logo">
   <div class="rear-tagline">Pro-Level Pest Solutions · Since 1986</div>
   <div class="rear-divider"></div>
 
@@ -1182,27 +790,28 @@
     <strong>Pest Pro, LLC</strong><br>
     Office: (407) 922-2276<br>
     Email: info@PestProLLC.com<br>
+    Assigned Technician: David Kell · (407) 840-8852<br>
     Serving Orange, Osceola, Lake &amp; Polk Counties
   </div>
 
   <div class="rear-license-box">
     <strong>Regulatory Compliance</strong><br>
     Licensed by the Florida Department of Agriculture &amp; Consumer Services (FDACS)<br>
-    Pest Control License · Chapter 5E-14, Florida Administrative Code<br>
+    Chapter 5E-14 · Pest Control Business License<br>
     Certified Operator: Daniel Rumsey, CPO<br>
-    Liability Insured · Workers Compensation Insured
+    General Liability &amp; Pest Control Insurance on file
   </div>
 
-  <div class="rear-warranty-box">
-    🦟 Questions about your pest program?<br>
-    Contact us anytime — (407) 922-2276<br>
-    We respond to critical pest issues promptly. Your patients deserve a pest-free environment.
+  <div class="rear-cta">
+    🦟 Questions about your pest program? Call us anytime.<br>
+    (407) 922-2276 · David Kell: (407) 840-8852<br>
+    We respond promptly. Your patients deserve a pest-free environment.
   </div>
 
   <div class="rear-divider"></div>
 
   <div class="rear-note">
-    This binder and all records contained herein are the property of the Rehabilitation Center of Orlando and are maintained in accordance with AHCA Rule 59A-4, Florida Statutes Chapter 388, FDACS Chapter 5E-14, and federal CMS §483.90 physical environment standards. Retain completed binders for a minimum of two (2) years from last entry date. Do not discard. Contact Pest Pro for replacement log pages at no charge.
+    This binder and all records contained herein are the property of the Rehabilitation Center of Orlando and are maintained in accordance with AHCA Rule 59A-4, Florida Statutes Chapter 388, FDACS Chapter 5E-14, and federal CMS §483.90 physical environment standards. Retain completed binders for a minimum of two (2) years from the last entry date. Active sighting logs are kept at Reception. Completed binders are stored in the Maintenance Office. Contact Pest Pro for replacement log pages at no charge: (407) 922-2276.
   </div>
 </div>
 </div>
