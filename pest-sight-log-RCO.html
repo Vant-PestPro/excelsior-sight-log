@@ -27,11 +27,10 @@
 
   .page {
     width: 8.5in;
-    min-height: 11in;
     margin: 0 auto 0.5in auto;
     padding: 0.5in;
     background: var(--white);
-    position: relative;
+
   }
 
   /* ===== PAGE HEADER (interior pages) ===== */
@@ -43,19 +42,18 @@
     padding-bottom: 8px;
     margin-bottom: 16px;
   }
-  .header-logo { height: 110px; width: auto; display: block; }
+  .header-logo { height: 80px; width: auto; display: block; }
   .page-header .right-block { text-align: right; font-size: 8pt; color: var(--navy); line-height: 1.5; }
   .page-header .right-block strong { display: block; font-size: 10pt; }
 
   /* ===== FOOTER ===== */
   .page-footer {
-    position: absolute;
-    bottom: 0.35in; left: 0.5in; right: 0.5in;
+    margin-top: 12px;
     border-top: 1px solid var(--mid-gray);
     padding-top: 5px;
     display: flex;
     justify-content: space-between;
-    font-size: 8.5pt;
+    font-size: 8pt;
     color: #888;
   }
 
@@ -70,7 +68,7 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
-  .section-sub { font-size: 9pt; color: #555; margin-bottom: 12px; line-height: 1.5; }
+  .section-sub { font-size: 8.5pt; color: #555; margin-bottom: 8px; line-height: 1.4; }
 
   /* ===== TABLES ===== */
   table { width: 100%; border-collapse: collapse; font-size: 8pt; }
@@ -84,7 +82,7 @@
     border: 1px solid var(--navy);
     vertical-align: top;
   }
-  td { border: 1.5px solid #555; padding: 4px 5px; vertical-align: top; height: 32px; font-size: 9pt; }
+  td { border: 1.5px solid #555; padding: 4px 5px; vertical-align: top; height: 22px; font-size: 9pt; }
   tr:nth-child(even) td { background: var(--light-gray); }
   tr:nth-child(odd) td { background: var(--white); }
   .row-num {
@@ -102,7 +100,7 @@
     border-top: 0;
     border-bottom: 2px solid #555;
     font-size: 8.5pt;
-    height: 52px;
+    height: 38px;
     vertical-align: top;
     padding: 3px 4px 3px 4px;
   }
@@ -131,7 +129,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    min-height: 10in;
     padding: 0.5in 0.65in;
   }
   .cover-top { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 20px; }
@@ -157,7 +154,7 @@
     font-size: 7.5pt;
     color: #555;
     width: 88%;
-    line-height: 1.7;
+    line-height: 1.5;
     text-align: left;
   }
   .cover-ipm-notice strong { color: var(--navy); }
@@ -184,7 +181,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 10in;
     padding: 1in 0.75in;
     background: var(--white);
     border: 8px solid var(--navy);
@@ -202,24 +198,24 @@
   .rear-cta { background: var(--navy); color: var(--white); padding: 12px 28px; border-radius: 4px; font-size: 9.5pt; font-weight: bold; width: 80%; line-height: 1.6; }
 
   /* ===== INFO GRIDS ===== */
-  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
-  .info-box { border: 1px solid #ccc; border-radius: 3px; padding: 9px 12px; }
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+  .info-box { border: 1px solid #ccc; border-radius: 3px; padding: 6px 10px; }
   .info-box h3 { font-size: 8pt; text-transform: uppercase; color: var(--navy); border-bottom: 1.5px solid var(--yellow); padding-bottom: 3px; margin-bottom: 7px; font-weight: bold; }
-  .info-box ul { list-style: disc; padding-left: 14px; font-size: 9pt; color: #333; line-height: 1.7; }
-  .info-box p { font-size: 9pt; color: #333; line-height: 1.7; }
+  .info-box ul { list-style: disc; padding-left: 14px; font-size: 8.5pt; color: #333; line-height: 1.5; }
+  .info-box p { font-size: 8.5pt; color: #333; line-height: 1.5; }
   .fill-line { border-bottom: 1.5px solid #777; min-height: 15px; font-size: 9pt; color: #222; margin: 4px 0; }
 
-  .code-table td { font-size: 7.5pt; padding: 3px 7px; border: 1px solid #ccc; height: auto; }
+  .code-table td { font-size: 7.5pt; padding: 2px 6px; border: 1px solid #ccc; height: auto; }
   .code-table th { font-size: 7pt; }
 
   .quick-guide { border-left: 4px solid var(--navy);
     border: 1px solid #ccc;
     border-left: 4px solid var(--navy);
     border-radius: 3px;
-    padding: 10px 14px;
+    padding: 7px 12px;
     font-size: 7.5pt;
-    line-height: 1.7;
-    margin-bottom: 14px;
+    line-height: 1.5;
+    margin-bottom: 8px;
     color: #333;
   }
   .quick-guide strong { color: var(--navy); }
@@ -536,26 +532,6 @@
   <td><span class="fl">Tech Name &amp; Signature</span></td>
 </tr>
 
-<!-- Entry 7 -->
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr class="tech-row">
-  <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Responded</span></td>
-  <td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td>
-  <td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td>
-  <td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td>
-  <td><span class="fl">Tech Name &amp; Signature</span></td>
-</tr>
-
-<!-- Entry 8 -->
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr class="tech-row">
-  <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Responded</span></td>
-  <td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td>
-  <td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td>
-  <td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td>
-  <td><span class="fl">Tech Name &amp; Signature</span></td>
-</tr>
-
     </tbody>
   </table>
 
@@ -611,11 +587,6 @@
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr class="tech-row"><td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Responded</span></td><td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td><td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td><td><span class="fl">Tech Name &amp; Sig.</span></td></tr>
 
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr class="tech-row"><td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Responded</span></td><td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td><td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td><td><span class="fl">Tech Name &amp; Sig.</span></td></tr>
-
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr class="tech-row"><td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Responded</span></td><td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td><td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td><td><span class="fl">Tech Name &amp; Sig.</span></td></tr>
 
     </tbody>
   </table>
