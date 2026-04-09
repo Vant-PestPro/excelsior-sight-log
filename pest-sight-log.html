@@ -10,19 +10,14 @@
 
   @media print {
     body { font-size: 9pt; }
-    .page { page-break-after: always; break-after: page; }
+    .page { page-break-after: always; break-after: page; margin: 0; max-width: 100%; }
     .page:last-child { page-break-after: avoid; break-after: avoid; }
-    @page {
-      margin: 0.5in;
-      size: letter portrait;
-      /* Suppress browser-generated headers/footers where supported */
-      margin-top: 0.5in;
-      margin-bottom: 0.5in;
-    }
     .no-print { display: none; }
   }
-  /* Chrome/Edge: suppress URL + date stamp in header/footer */
-  @page { margin: 0.5in; }
+  @page {
+    size: 8.5in 11in;
+    margin: 0.5in;
+  }
 
   :root {
     --navy: #1a2557;
@@ -34,12 +29,15 @@
   }
 
   .page {
-    width: 8.5in;
-    min-height: 11in;
+    width: 100%;
+    max-width: 7.5in;
+    min-height: 10in;
     margin: 0 auto 0.5in auto;
     padding: 0.5in;
     background: var(--white);
     position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   /* ===== PAGE HEADER (interior pages) ===== */
@@ -52,8 +50,8 @@
     margin-bottom: 16px;
   }
   .header-logo { height: 44px; width: auto; display: block; }
-  .page-header .right-block { text-align: right; font-size: 8pt; color: var(--navy); line-height: 1.5; }
-  .page-header .right-block strong { display: block; font-size: 10pt; }
+  .page-header .right-block { text-align: right; font-size: 7pt; color: var(--navy); line-height: 1.4; max-width: 55%; overflow: hidden; }
+  .page-header .right-block strong { display: block; font-size: 8.5pt; }
 
   /* ===== FOOTER ===== */
   .page-footer {
@@ -124,13 +122,15 @@
   }
   /* tiny hint label — sits at top of cell, rest is blank writing space */
   .fl {
-    font-size: 5.5pt;
+    font-size: 5pt;
     color: #aaa;
     display: block;
     margin-bottom: 0;
     text-transform: uppercase;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.1px;
     line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   /* ===== COVER PAGE ===== */
@@ -479,16 +479,25 @@
   <div class="section-title">Pest Sighting &amp; Technician Response Log</div>
   <p class="section-sub" style="font-size:7pt; margin-bottom:6px;"><em>White rows = Staff Report. Shaded rows = Technician Response. Both rows must be completed for each sighting.</em></p>
 
-  <table>
+  <table style="table-layout:fixed; width:100%;">
+    <colgroup>
+      <col style="width:68px;">
+      <col style="width:58px;">
+      <col style="width:46px;">
+      <col style="width:48px;">
+      <col style="width:30px;">
+      <col>
+      <col style="width:80px;">
+    </colgroup>
     <thead>
       <tr>
-        <th style="width:62px;">Date<br><span style="font-weight:normal;">(MM/DD/YY)</span></th>
-        <th style="width:55px;">Location<br><span style="font-weight:normal;">Code + Room</span></th>
-        <th style="width:48px;">Pest Type<br><span style="font-weight:normal;">Code</span></th>
-        <th style="width:50px;">Live / Dead / Evidence</th>
-        <th style="width:38px;">Qty</th>
+        <th>Date<br><span style="font-weight:normal;">(MM/DD/YY)</span></th>
+        <th>Location<br><span style="font-weight:normal;">Code + Room</span></th>
+        <th>Pest Type<br><span style="font-weight:normal;">Code</span></th>
+        <th>Live / Dead / Evidence</th>
+        <th>Qty</th>
         <th>Description &amp; Exact Location<br><span style="font-weight:normal;">What was seen, where exactly, conditions noted</span></th>
-        <th style="width:82px;">Reported By<br><span style="font-weight:normal;">Name, Title, Signature</span></th>
+        <th>Reported By<br><span style="font-weight:normal;">Name, Title, Sig.</span></th>
       </tr>
     </thead>
     <tbody>
@@ -598,16 +607,25 @@
     </div>
   </div>
 
-  <table>
+  <table style="table-layout:fixed; width:100%;">
+    <colgroup>
+      <col style="width:68px;">
+      <col style="width:58px;">
+      <col style="width:46px;">
+      <col style="width:48px;">
+      <col style="width:30px;">
+      <col>
+      <col style="width:80px;">
+    </colgroup>
     <thead>
       <tr>
-        <th style="width:62px;">Date<br><span style="font-weight:normal;">(MM/DD/YY)</span></th>
-        <th style="width:55px;">Location<br><span style="font-weight:normal;">Code + Room</span></th>
-        <th style="width:48px;">Pest Type<br><span style="font-weight:normal;">Code</span></th>
-        <th style="width:50px;">Live / Dead / Evidence</th>
-        <th style="width:38px;">Qty</th>
+        <th>Date<br><span style="font-weight:normal;">(MM/DD/YY)</span></th>
+        <th>Location<br><span style="font-weight:normal;">Code + Room</span></th>
+        <th>Pest Type<br><span style="font-weight:normal;">Code</span></th>
+        <th>Live / Dead / Evidence</th>
+        <th>Qty</th>
         <th>Description &amp; Exact Location</th>
-        <th style="width:82px;">Reported By<br><span style="font-weight:normal;">Name, Title, Sig.</span></th>
+        <th>Reported By<br><span style="font-weight:normal;">Name, Title, Sig.</span></th>
       </tr>
     </thead>
     <tbody>
