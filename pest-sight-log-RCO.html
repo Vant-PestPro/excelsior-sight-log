@@ -54,13 +54,15 @@
     display: flex;
     justify-content: space-between;
     font-size: 8pt;
-    color: #888;
+    color: #222;
   }
 
   /* ===== SECTION TITLES ===== */
   .section-title {
-    background: var(--navy);
-    color: var(--white);
+    background: #ffffff;
+    color: #1a2557;
+    border-left: 5px solid #1a2557;
+    border-bottom: 1.5px solid #1a2557;
     font-size: 10pt;
     font-weight: bold;
     padding: 4px 10px;
@@ -68,18 +70,19 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
-  .section-sub { font-size: 8.5pt; color: #555; margin-bottom: 8px; line-height: 1.4; }
+  .section-sub { font-size: 8.5pt; color: #222; margin-bottom: 8px; line-height: 1.4; }
 
   /* ===== TABLES ===== */
   table { width: 100%; border-collapse: collapse; font-size: 8pt; }
   th {
-    background: var(--navy);
-    color: var(--white);
+    background: #ffffff;
+    color: #1a2557;
     padding: 5px;
     text-align: left;
     font-size: 8pt;
     font-weight: bold;
-    border: 1px solid var(--navy);
+    border: 1.5px solid #1a2557;
+    border-bottom: 2px solid #1a2557;
     vertical-align: top;
   }
   td { border: 1.5px solid #555; padding: 4px 5px; vertical-align: top; height: 22px; font-size: 9pt; }
@@ -96,7 +99,7 @@
 
   /* ===== TECHNICIAN ROW — clean, lightly shaded, tall writing space ===== */
   .tech-row td {
-    background: #d8d8d8 !important;
+    background: #f0f0f0 !important;
     border-top: 0;
     border-bottom: 2px solid #555;
     font-size: 8.5pt;
@@ -105,7 +108,7 @@
     padding: 3px 4px 3px 4px;
   }
   .tech-row .row-flag {
-    background: #bbb !important;
+    background: #e0e0e0 !important;
     color: #222;
     font-size: 7.5pt;
     font-weight: bold;
@@ -115,7 +118,8 @@
   /* tiny hint label — sits at top of cell, rest is blank writing space */
   .fl {
     font-size: 7pt;
-    color: #333;
+    color: #111;
+    color: #111;
     display: block;
     margin-bottom: 0;
     text-transform: uppercase;
@@ -143,7 +147,7 @@
   .cover-title { font-size: 26pt; font-weight: 900; color: var(--navy); text-transform: uppercase; letter-spacing: 2px; text-align: center; line-height: 1.2; }
   .cover-subtitle { font-size: 13pt; font-weight: bold; color: var(--red); letter-spacing: 1px; text-align: center; margin-top: 4px; }
   .cover-facility-box { border: 2px solid var(--navy); padding: 20px 32px; width: 88%; border-radius: 4px; text-align: center; }
-  .cover-facility-box .fac-label { font-size: 7.5pt; color: #888; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; margin-bottom: 5px; }
+  .cover-facility-box .fac-label { font-size: 7.5pt; color: #333; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; margin-bottom: 5px; }
   .cover-facility-box .fac-name { font-size: 16pt; font-weight: bold; color: var(--navy); }
   .cover-facility-box .fac-addr { font-size: 10pt; color: #444; margin-top: 3px; }
   .cover-ipm-notice {
@@ -152,7 +156,7 @@
     border-radius: 4px;
     padding: 10px 18px;
     font-size: 7.5pt;
-    color: #555;
+    color: #222;
     width: 88%;
     line-height: 1.5;
     text-align: left;
@@ -173,7 +177,7 @@
   .cover-contact-bar .ci { display: flex; flex-direction: column; align-items: center; gap: 2px; }
   .cover-contact-bar .ci .cl { font-size: 6pt; color: var(--yellow); text-transform: uppercase; font-weight: bold; letter-spacing: 0.5px; }
   .cover-contact-bar .ci .cv { font-size: 9.5pt; font-weight: bold; }
-  .cover-reg-note { font-size: 7pt; color: #999; width: 88%; text-align: center; line-height: 1.6; }
+  .cover-reg-note { font-size: 7pt; color: #444; width: 88%; text-align: center; line-height: 1.6; }
 
   /* ===== REAR COVER — white background, navy border ===== */
   .rear-cover {
@@ -192,17 +196,17 @@
   .rear-divider { width: 55%; height: 3px; background: var(--yellow); border-radius: 2px; margin: 0 auto; }
   .rear-contact-block { color: #333; line-height: 2; font-size: 10.5pt; }
   .rear-contact-block strong { color: var(--navy); font-size: 13pt; }
-  .rear-license-box { border: 1.5px solid var(--mid-gray); border-radius: 4px; padding: 12px 28px; color: #555; font-size: 8.5pt; line-height: 2; width: 80%; text-align: left; }
+  .rear-license-box { border: 1.5px solid var(--mid-gray); border-radius: 4px; padding: 12px 28px; color: #222; font-size: 8.5pt; line-height: 2; width: 80%; text-align: left; }
   .rear-license-box strong { color: var(--navy); }
-  .rear-note { color: #999; font-size: 7.5pt; line-height: 1.7; width: 80%; }
+  .rear-note { color: #444; font-size: 8pt; line-height: 1.7; width: 80%; }
   .rear-cta { background: var(--navy); color: var(--white); padding: 12px 28px; border-radius: 4px; font-size: 9.5pt; font-weight: bold; width: 80%; line-height: 1.6; }
 
   /* ===== INFO GRIDS ===== */
   .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
   .info-box { border: 1px solid #ccc; border-radius: 3px; padding: 6px 10px; }
   .info-box h3 { font-size: 8pt; text-transform: uppercase; color: var(--navy); border-bottom: 1.5px solid var(--yellow); padding-bottom: 3px; margin-bottom: 7px; font-weight: bold; }
-  .info-box ul { list-style: disc; padding-left: 14px; font-size: 8.5pt; color: #333; line-height: 1.5; }
-  .info-box p { font-size: 8.5pt; color: #333; line-height: 1.5; }
+  .info-box ul { list-style: disc; padding-left: 14px; font-size: 8.5pt; color: #111; line-height: 1.5; }
+  .info-box p { font-size: 8.5pt; color: #111; line-height: 1.5; }
   .fill-line { border-bottom: 1.5px solid #777; min-height: 15px; font-size: 9pt; color: #222; margin: 4px 0; }
 
   .code-table td { font-size: 7.5pt; padding: 2px 6px; border: 1px solid #ccc; height: auto; }
@@ -216,7 +220,7 @@
     font-size: 7.5pt;
     line-height: 1.5;
     margin-bottom: 8px;
-    color: #333;
+    color: #111;
   }
   .quick-guide strong { color: var(--navy); }
   .quick-guide ol { padding-left: 18px; margin-top: 4px; }
@@ -426,10 +430,10 @@
       <div class="fill-line"><span style="color:#333; font-size:9pt;">Insurance Expiration: </span></div>
     </div>
   </div>
-    <div style="font-size:8pt; color:#ddd;">Printed copies of FDACS Business License, CPO License, and Certificate of Insurance</div>
+    <div style="font-size:8pt; color:#444;">Printed copies of FDACS Business License, CPO License, and Certificate of Insurance</div>
   </div>
 
-  <div style="margin-top:14px; background:#f7f7f7; border: 1px solid #ddd; border-left: 4px solid var(--navy); padding: 9px 14px; font-size: 7.5pt; color: #555; line-height: 1.7; border-radius: 3px;">
+  <div style="margin-top:14px; background:#f7f7f7; border: 1px solid #ddd; border-left: 4px solid var(--navy); padding: 9px 14px; font-size: 8.5pt; color: #222; line-height: 1.7; border-radius: 3px;">
     <strong>Compliance Notice:</strong> Florida law requires that a copy of the pest control business license be conspicuously displayed at the physical address listed on the license. Per FDACS Chapter 5E-14.113, all pesticide applications must be performed by or under the direct supervision of a licensed pest control technician. This facility may request proof of technician certification at any time by calling (407) 922-2276.
   </div>
 
@@ -471,65 +475,65 @@
     <tbody>
 
 <!-- Entry 1 -->
-<tr><td></td><td></td><td></td><td></td><td></td><td style="color:#bbb; font-size:7pt; font-style:italic;">Staff completes this row →</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td style="color:#444; font-size:8pt; font-style:italic;">Staff completes this row →</td><td></td></tr>
 <tr class="tech-row">
-  <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Responded</span></td>
-  <td><span class="fl">Pest Found?</span></td>
-  <td><span class="fl">Action Taken</span></td>
-  <td><span class="fl">Product Used</span></td>
+  <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+  <td><span class="fl">Found?</span></td>
+  <td><span class="fl">Action</span></td>
+  <td><span class="fl">Product</span></td>
   <td><span class="fl">Status</span></td>
-  <td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td>
-  <td><span class="fl">Tech Name &amp; Signature</span></td>
+  <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+  <td><span class="fl">Tech &amp; Sig.</span></td>
 </tr>
 
 <!-- Entry 2 -->
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr class="tech-row">
-  <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Responded</span></td>
-  <td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td>
-  <td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td>
-  <td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td>
-  <td><span class="fl">Tech Name &amp; Signature</span></td>
+  <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+  <td><span class="fl">Found?</span></td><td><span class="fl">Action</span></td>
+  <td><span class="fl">Product</span></td><td><span class="fl">Status</span></td>
+  <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+  <td><span class="fl">Tech &amp; Sig.</span></td>
 </tr>
 
 <!-- Entry 3 -->
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr class="tech-row">
-  <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Responded</span></td>
-  <td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td>
-  <td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td>
-  <td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td>
-  <td><span class="fl">Tech Name &amp; Signature</span></td>
+  <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+  <td><span class="fl">Found?</span></td><td><span class="fl">Action</span></td>
+  <td><span class="fl">Product</span></td><td><span class="fl">Status</span></td>
+  <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+  <td><span class="fl">Tech &amp; Sig.</span></td>
 </tr>
 
 <!-- Entry 4 -->
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr class="tech-row">
-  <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Responded</span></td>
-  <td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td>
-  <td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td>
-  <td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td>
-  <td><span class="fl">Tech Name &amp; Signature</span></td>
+  <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+  <td><span class="fl">Found?</span></td><td><span class="fl">Action</span></td>
+  <td><span class="fl">Product</span></td><td><span class="fl">Status</span></td>
+  <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+  <td><span class="fl">Tech &amp; Sig.</span></td>
 </tr>
 
 <!-- Entry 5 -->
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr class="tech-row">
-  <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Responded</span></td>
-  <td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td>
-  <td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td>
-  <td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td>
-  <td><span class="fl">Tech Name &amp; Signature</span></td>
+  <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+  <td><span class="fl">Found?</span></td><td><span class="fl">Action</span></td>
+  <td><span class="fl">Product</span></td><td><span class="fl">Status</span></td>
+  <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+  <td><span class="fl">Tech &amp; Sig.</span></td>
 </tr>
 
 <!-- Entry 6 -->
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr class="tech-row">
-  <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Responded</span></td>
-  <td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td>
-  <td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td>
-  <td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td>
-  <td><span class="fl">Tech Name &amp; Signature</span></td>
+  <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+  <td><span class="fl">Found?</span></td><td><span class="fl">Action</span></td>
+  <td><span class="fl">Product</span></td><td><span class="fl">Status</span></td>
+  <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+  <td><span class="fl">Tech &amp; Sig.</span></td>
 </tr>
 
     </tbody>
@@ -570,22 +574,22 @@
     <tbody>
 
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr class="tech-row"><td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Responded</span></td><td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td><td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td><td><span class="fl">Tech Name &amp; Sig.</span></td></tr>
+<tr class="tech-row"><td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td><td><span class="fl">Found?</span></td><td><span class="fl">Action</span></td><td><span class="fl">Product</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td><td><span class="fl">Tech &amp; Sig.</span></td></tr>
 
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr class="tech-row"><td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Responded</span></td><td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td><td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td><td><span class="fl">Tech Name &amp; Sig.</span></td></tr>
+<tr class="tech-row"><td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td><td><span class="fl">Found?</span></td><td><span class="fl">Action</span></td><td><span class="fl">Product</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td><td><span class="fl">Tech &amp; Sig.</span></td></tr>
 
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr class="tech-row"><td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Responded</span></td><td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td><td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td><td><span class="fl">Tech Name &amp; Sig.</span></td></tr>
+<tr class="tech-row"><td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td><td><span class="fl">Found?</span></td><td><span class="fl">Action</span></td><td><span class="fl">Product</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td><td><span class="fl">Tech &amp; Sig.</span></td></tr>
 
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr class="tech-row"><td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Responded</span></td><td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td><td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td><td><span class="fl">Tech Name &amp; Sig.</span></td></tr>
+<tr class="tech-row"><td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td><td><span class="fl">Found?</span></td><td><span class="fl">Action</span></td><td><span class="fl">Product</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td><td><span class="fl">Tech &amp; Sig.</span></td></tr>
 
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr class="tech-row"><td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Responded</span></td><td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td><td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td><td><span class="fl">Tech Name &amp; Sig.</span></td></tr>
+<tr class="tech-row"><td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td><td><span class="fl">Found?</span></td><td><span class="fl">Action</span></td><td><span class="fl">Product</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td><td><span class="fl">Tech &amp; Sig.</span></td></tr>
 
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr class="tech-row"><td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Responded</span></td><td><span class="fl">Pest Found?</span></td><td><span class="fl">Action Taken</span></td><td><span class="fl">Product Used</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up Required? Y / N &nbsp;&nbsp; If yes, Next Visit: _____________</span></td><td><span class="fl">Tech Name &amp; Sig.</span></td></tr>
+<tr class="tech-row"><td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td><td><span class="fl">Found?</span></td><td><span class="fl">Action</span></td><td><span class="fl">Product</span></td><td><span class="fl">Status</span></td><td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td><td><span class="fl">Tech &amp; Sig.</span></td></tr>
 
 
     </tbody>
@@ -772,7 +776,7 @@
   <div class="rear-divider"></div>
 
   <div class="rear-note">
-    This binder and all records contained herein are maintained in accordance with AHCA Rule 59A-4, Florida Statutes Chapter 388, FDACS Chapter 5E-14, and federal CMS §483.90 physical environment standards. Retain completed binders for a minimum of two (2) years from the last entry date. Active sighting logs are kept at Reception. Completed binders are stored in the Maintenance Office. For any additional information, contact Pest Pro at (407) 922-2276 or info@PestProLLC.com.
+    Maintained per AHCA Rule 59A-4, FL Statutes §388, FDACS 5E-14, and CMS §483.90. Retain binders minimum 2 years. Sighting logs at Reception. Completed binders in Maintenance Office.<br>For additional information: (407) 922-2276 · info@PestProLLC.com
   </div>
 </div>
 </div>
