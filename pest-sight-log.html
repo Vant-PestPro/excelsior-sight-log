@@ -6,7 +6,7 @@
 <title>Pest Pro – Pest Sight Log – Rehabilitation Center of Orlando</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: Arial, Helvetica, sans-serif; font-size: 10pt; color: #1a1a1a; }
+  body { font-family: Arial, Helvetica, sans-serif; font-size: 11pt; color: #1a1a1a; }
 
   @media print {
     body { font-size: 9pt; }
@@ -21,8 +21,8 @@
     --yellow: #FFB800;
     --red: #cc2200;
     --white: #ffffff;
-    --light-gray: #f5f5f5;
-    --mid-gray: #c8ccd8;
+    --light-gray: #ebebeb;
+    --mid-gray: #999;
   }
 
   .page {
@@ -55,7 +55,7 @@
     padding-top: 5px;
     display: flex;
     justify-content: space-between;
-    font-size: 7pt;
+    font-size: 8.5pt;
     color: #888;
   }
 
@@ -70,21 +70,21 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
-  .section-sub { font-size: 8pt; color: #555; margin-bottom: 12px; line-height: 1.5; }
+  .section-sub { font-size: 9pt; color: #555; margin-bottom: 12px; line-height: 1.5; }
 
   /* ===== TABLES ===== */
   table { width: 100%; border-collapse: collapse; font-size: 8pt; }
   th {
     background: var(--navy);
     color: var(--white);
-    padding: 4px;
+    padding: 5px;
     text-align: left;
-    font-size: 7pt;
+    font-size: 8pt;
     font-weight: bold;
     border: 1px solid var(--navy);
     vertical-align: top;
   }
-  td { border: 1px solid #ccc; padding: 3px 4px; vertical-align: top; height: 28px; }
+  td { border: 1.5px solid #555; padding: 4px 5px; vertical-align: top; height: 32px; font-size: 9pt; }
   tr:nth-child(even) td { background: var(--light-gray); }
   tr:nth-child(odd) td { background: var(--white); }
   .row-num {
@@ -93,31 +93,31 @@
     font-weight: bold;
     text-align: center;
     width: 20px;
-    font-size: 7pt;
+    font-size: 8.5pt;
   }
 
   /* ===== TECHNICIAN ROW — clean, lightly shaded, tall writing space ===== */
   .tech-row td {
-    background: #f0f0f0 !important;
+    background: #d8d8d8 !important;
     border-top: 0;
-    border-bottom: 1.5px solid #aaa;
-    font-size: 7pt;
+    border-bottom: 2px solid #555;
+    font-size: 8.5pt;
     height: 52px;
     vertical-align: top;
     padding: 3px 4px 3px 4px;
   }
   .tech-row .row-flag {
-    background: #ddd !important;
-    color: #666;
-    font-size: 6pt;
+    background: #bbb !important;
+    color: #222;
+    font-size: 7.5pt;
     font-weight: bold;
     text-align: center;
     vertical-align: middle;
   }
   /* tiny hint label — sits at top of cell, rest is blank writing space */
   .fl {
-    font-size: 5.5pt;
-    color: #aaa;
+    font-size: 7pt;
+    color: #333;
     display: block;
     margin-bottom: 0;
     text-transform: uppercase;
@@ -205,14 +205,14 @@
   .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
   .info-box { border: 1px solid #ccc; border-radius: 3px; padding: 9px 12px; }
   .info-box h3 { font-size: 8pt; text-transform: uppercase; color: var(--navy); border-bottom: 1.5px solid var(--yellow); padding-bottom: 3px; margin-bottom: 7px; font-weight: bold; }
-  .info-box ul { list-style: disc; padding-left: 14px; font-size: 7.5pt; color: #333; line-height: 1.7; }
-  .info-box p { font-size: 7.5pt; color: #333; line-height: 1.7; }
-  .fill-line { border-bottom: 1px solid #bbb; min-height: 15px; font-size: 7.5pt; color: #333; margin: 4px 0; }
+  .info-box ul { list-style: disc; padding-left: 14px; font-size: 9pt; color: #333; line-height: 1.7; }
+  .info-box p { font-size: 9pt; color: #333; line-height: 1.7; }
+  .fill-line { border-bottom: 1.5px solid #777; min-height: 15px; font-size: 7.5pt; color: #333; margin: 4px 0; }
 
   .code-table td { font-size: 7.5pt; padding: 3px 7px; border: 1px solid #ccc; height: auto; }
   .code-table th { font-size: 7pt; }
 
-  .quick-guide {
+  .quick-guide { border-left: 4px solid var(--navy);
     border: 1px solid #ccc;
     border-left: 4px solid var(--navy);
     border-radius: 3px;
