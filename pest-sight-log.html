@@ -10,13 +10,10 @@
 
   @media print {
     body { font-size: 9pt; }
-    .page { page-break-after: always; break-after: page; margin: 0; max-width: 100%; }
+    .page { page-break-after: always; break-after: page; }
     .page:last-child { page-break-after: avoid; break-after: avoid; }
+    @page { margin: 0.5in; size: letter portrait; }
     .no-print { display: none; }
-  }
-  @page {
-    size: 8.5in 11in;
-    margin: 0.5in;
   }
 
   :root {
@@ -29,15 +26,12 @@
   }
 
   .page {
-    width: 100%;
-    max-width: 7.5in;
-    min-height: 10in;
+    width: 8.5in;
+    min-height: 11in;
     margin: 0 auto 0.5in auto;
     padding: 0.5in;
     background: var(--white);
     position: relative;
-    box-sizing: border-box;
-    overflow: hidden;
   }
 
   /* ===== PAGE HEADER (interior pages) ===== */
@@ -50,8 +44,8 @@
     margin-bottom: 16px;
   }
   .header-logo { height: 44px; width: auto; display: block; }
-  .page-header .right-block { text-align: right; font-size: 7pt; color: var(--navy); line-height: 1.4; max-width: 55%; overflow: hidden; }
-  .page-header .right-block strong { display: block; font-size: 8.5pt; }
+  .page-header .right-block { text-align: right; font-size: 8pt; color: var(--navy); line-height: 1.5; }
+  .page-header .right-block strong { display: block; font-size: 10pt; }
 
   /* ===== FOOTER ===== */
   .page-footer {
@@ -122,15 +116,13 @@
   }
   /* tiny hint label — sits at top of cell, rest is blank writing space */
   .fl {
-    font-size: 5pt;
+    font-size: 5.5pt;
     color: #aaa;
     display: block;
     margin-bottom: 0;
     text-transform: uppercase;
-    letter-spacing: 0.1px;
+    letter-spacing: 0.2px;
     line-height: 1.2;
-    white-space: nowrap;
-    overflow: hidden;
   }
 
   /* ===== COVER PAGE ===== */
@@ -243,15 +235,7 @@
 
 <!-- PRINT BUTTON -->
 <div class="print-btn-wrap no-print">
-  <p style="margin-bottom:10px; color:#333; font-size:10pt; font-weight:bold;">📋 Before printing — important:</p>
-  <ol style="text-align:left; display:inline-block; margin-bottom:14px; font-size:9pt; color:#444; line-height:2;">
-    <li>Click the print button below (or File → Print)</li>
-    <li>In the print dialog, find <strong>"More settings"</strong> or <strong>"Options"</strong></li>
-    <li>Look for <strong>"Headers and footers"</strong> — <strong>uncheck / turn it OFF</strong></li>
-    <li>Set paper size: <strong>Letter</strong> · Margins: <strong>Default or 0.5"</strong></li>
-    <li>Then print or Save as PDF</li>
-  </ol>
-  <br>
+  <p style="margin-bottom:12px; color:#555; font-size:9pt;">Open in browser → File → Print → Letter, 0.5" margins → Save as PDF</p>
   <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
 </div>
 
@@ -479,25 +463,16 @@
   <div class="section-title">Pest Sighting &amp; Technician Response Log</div>
   <p class="section-sub" style="font-size:7pt; margin-bottom:6px;"><em>White rows = Staff Report. Shaded rows = Technician Response. Both rows must be completed for each sighting.</em></p>
 
-  <table style="table-layout:fixed; width:100%;">
-    <colgroup>
-      <col style="width:68px;">
-      <col style="width:58px;">
-      <col style="width:46px;">
-      <col style="width:48px;">
-      <col style="width:30px;">
-      <col>
-      <col style="width:80px;">
-    </colgroup>
+  <table>
     <thead>
       <tr>
-        <th>Date<br><span style="font-weight:normal;">(MM/DD/YY)</span></th>
-        <th>Location<br><span style="font-weight:normal;">Code + Room</span></th>
-        <th>Pest Type<br><span style="font-weight:normal;">Code</span></th>
-        <th>Live / Dead / Evidence</th>
-        <th>Qty</th>
+        <th style="width:62px;">Date<br><span style="font-weight:normal;">(MM/DD/YY)</span></th>
+        <th style="width:55px;">Location<br><span style="font-weight:normal;">Code + Room</span></th>
+        <th style="width:48px;">Pest Type<br><span style="font-weight:normal;">Code</span></th>
+        <th style="width:50px;">Live / Dead / Evidence</th>
+        <th style="width:38px;">Qty</th>
         <th>Description &amp; Exact Location<br><span style="font-weight:normal;">What was seen, where exactly, conditions noted</span></th>
-        <th>Reported By<br><span style="font-weight:normal;">Name, Title, Sig.</span></th>
+        <th style="width:82px;">Reported By<br><span style="font-weight:normal;">Name, Title, Signature</span></th>
       </tr>
     </thead>
     <tbody>
@@ -607,25 +582,16 @@
     </div>
   </div>
 
-  <table style="table-layout:fixed; width:100%;">
-    <colgroup>
-      <col style="width:68px;">
-      <col style="width:58px;">
-      <col style="width:46px;">
-      <col style="width:48px;">
-      <col style="width:30px;">
-      <col>
-      <col style="width:80px;">
-    </colgroup>
+  <table>
     <thead>
       <tr>
-        <th>Date<br><span style="font-weight:normal;">(MM/DD/YY)</span></th>
-        <th>Location<br><span style="font-weight:normal;">Code + Room</span></th>
-        <th>Pest Type<br><span style="font-weight:normal;">Code</span></th>
-        <th>Live / Dead / Evidence</th>
-        <th>Qty</th>
+        <th style="width:62px;">Date<br><span style="font-weight:normal;">(MM/DD/YY)</span></th>
+        <th style="width:55px;">Location<br><span style="font-weight:normal;">Code + Room</span></th>
+        <th style="width:48px;">Pest Type<br><span style="font-weight:normal;">Code</span></th>
+        <th style="width:50px;">Live / Dead / Evidence</th>
+        <th style="width:38px;">Qty</th>
         <th>Description &amp; Exact Location</th>
-        <th>Reported By<br><span style="font-weight:normal;">Name, Title, Sig.</span></th>
+        <th style="width:82px;">Reported By<br><span style="font-weight:normal;">Name, Title, Sig.</span></th>
       </tr>
     </thead>
     <tbody>
