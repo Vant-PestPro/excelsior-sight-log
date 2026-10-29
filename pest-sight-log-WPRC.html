@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pest Pro - Pest Sight Log - WPRC - Rehabilitation Center of Winter Park</title>
+<style>
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+ body { font-family: Arial, Helvetica, sans-serif; font-size: 11pt; color: #1a1a1a; }
+
+ @media print {
+ body { font-size: 9pt; }
+ .page { page-break-after: always; break-after: page; }
+ .page:last-child { page-break-after: auto; break-after: auto; }
+ @page { margin: 0.5in; size: letter portrait; }
+ .no-print { display: none; }
+ }
+
+ :root {
+ --navy: #1a2557;
+ --yellow: #FFB800;
+ --red: #cc2200;
+ --white: #ffffff;
+ --light-gray: #ebebeb;
+ --mid-gray: #999;
+ }
+
+ .page {
+ width: 8.5in;
+ min-height: 11in;
+ margin: 0 auto 0.5in auto;
+ padding: 0.5in;
+ background: var(--white);
+ }
+
+ /* ===== PAGE HEADER (interior pages) ===== */
+ .page-header {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ border-bottom: 2px solid var(--navy);
+ padding-bottom: 8px;
+ margin-bottom: 16px;
+ }
+ .header-logo { height: 44px; width: auto; display: block; }
+ .page-header .right-block { text-align: right; font-size: 8pt; color: var(--navy); line-height: 1.5; }
+ .page-header .right-block strong { display: block; font-size: 10pt; }
+
+ /* ===== FOOTER ===== */
+
+ /* ===== SECTION TITLES ===== */
+ .section-title {
+ background: #ffffff;
+ color: #1a2557;
+ border-left: 5px solid #1a2557;
+ border-bottom: 2px solid #1a2557;
+ font-size: 10pt;
+ font-weight: bold;
+ padding: 4px 10px;
+ margin-bottom: 6px;
+ text-transform: uppercase;
+ letter-spacing: 0.5px;
+ }
+ .section-sub { font-size: 9pt; color: #222; margin-bottom: 12px; line-height: 1.5; }
+
+ /* ===== TABLES ===== */
+ table { width: 100%; border-collapse: collapse; font-size: 8pt; }
+ th {
+ background: var(--navy);
+ color: var(--white);
+ padding: 5px;
+ text-align: left;
+ font-size: 8pt;
+ font-weight: bold;
+ border: 1px solid var(--navy);
+ vertical-align: top;
+ }
+ td { border: 1.5px solid #555; padding: 4px 5px; vertical-align: top; height: 32px; font-size: 9pt; }
+ tr:nth-child(even) td { background: var(--light-gray); }
+ tr:nth-child(odd) td { background: var(--white); }
+ .row-num {
+ background: var(--navy) !important;
+ color: var(--white);
+ font-weight: bold;
+ text-align: center;
+ width: 20px;
+ font-size: 8.5pt;
+ }
+
+ /* ===== TECHNICIAN ROW - clean, lightly shaded, tall writing space ===== */
+ .tech-row td {
+ background: #d8d8d8 !important;
+ border-top: 0;
+ border-bottom: 2px solid #555;
+ font-size: 8.5pt;
+ height: 52px;
+ vertical-align: top;
+ padding: 3px 4px 3px 4px;
+ }
+ .tech-row .row-flag {
+ background: #bbb !important;
+ color: #222;
+ font-size: 7.5pt;
+ font-weight: bold;
+ text-align: center;
+ vertical-align: middle;
+ }
+ /* tiny hint label - sits at top of cell, rest is blank writing space */
+ .fl {
+ font-size: 7pt;
+ color: #333;
+ display: block;
+ margin-bottom: 0;
+ text-transform: uppercase;
+ letter-spacing: 0.2px;
+ line-height: 1.2;
+ }
+
+ /* ===== COVER PAGE ===== */
+ .cover {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-between;
+ min-height: 10in;
+ padding: 0.5in 0.65in;
+ }
+ .cover-top { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+ .cover-logo { height: 260px; width: auto; max-width: 90%; }
+ .cover-divider {
+ width: 70%;
+ height: 3px;
+ background: linear-gradient(to right, var(--navy), var(--yellow), var(--red));
+ border-radius: 2px;
+ margin: 0 auto;
+ }
+ .cover-title { font-size: 26pt; font-weight: 900; color: var(--navy); text-transform: uppercase; letter-spacing: 2px; text-align: center; line-height: 1.2; }
+ .cover-subtitle { font-size: 13pt; font-weight: bold; color: var(--red); letter-spacing: 1px; text-align: center; margin-top: 4px; }
+ .cover-facility-box { border: 2px solid var(--navy); padding: 20px 32px; width: 88%; border-radius: 4px; text-align: center; }
+ .cover-facility-box .fac-label { font-size: 7.5pt; color: #222; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; margin-bottom: 5px; }
+ .cover-facility-box .fac-name { font-size: 16pt; font-weight: bold; color: var(--navy); }
+ .cover-facility-box .fac-addr { font-size: 10pt; color: #444; margin-top: 3px; }
+ .cover-ipm-notice {
+ background: #f7f7f7;
+ border: 1px solid #ddd;
+ border-radius: 4px;
+ padding: 10px 18px;
+ font-size: 7.5pt;
+ color: #222;
+ width: 88%;
+ line-height: 1.7;
+ text-align: left;
+ }
+ .cover-ipm-notice strong { color: var(--navy); }
+ .cover-bottom { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+ .cover-contact-bar {
+ background: var(--navy);
+ color: var(--white);
+ padding: 11px 28px;
+ border-radius: 4px;
+ width: 88%;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ font-size: 9pt;
+ }
+ .cover-contact-bar .ci { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+ .cover-contact-bar .ci .cl { font-size: 6pt; color: var(--yellow); text-transform: uppercase; font-weight: bold; letter-spacing: 0.5px; }
+ .cover-contact-bar .ci .cv { font-size: 9.5pt; font-weight: bold; }
+ .cover-reg-note { font-size: 7pt; color: #333; width: 88%; text-align: center; line-height: 1.6; }
+
+ /* ===== REAR COVER - white background, navy border ===== */
+ .rear-cover {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ min-height: 10in;
+ padding: 1in 0.75in;
+ background: var(--white);
+ border: 8px solid var(--navy);
+ text-align: center;
+ gap: 24px;
+ }
+ .rear-logo { height: 90px; width: auto; }
+ .rear-tagline { font-size: 10pt; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); }
+ .rear-divider { width: 55%; height: 3px; background: var(--yellow); border-radius: 2px; margin: 0 auto; }
+ .rear-contact-block { color: #333; line-height: 2; font-size: 10.5pt; }
+ .rear-contact-block strong { color: var(--navy); font-size: 13pt; }
+ .rear-license-box { border: 1.5px solid var(--mid-gray); border-radius: 4px; padding: 12px 28px; color: #222; font-size: 8.5pt; line-height: 2; width: 80%; text-align: left; }
+ .rear-license-box strong { color: var(--navy); }
+ .rear-note { color: #333; font-size: 7.5pt; line-height: 1.7; width: 80%; }
+ .rear-cta { background: var(--navy); color: var(--white); padding: 12px 28px; border-radius: 4px; font-size: 9.5pt; font-weight: bold; width: 80%; line-height: 1.6; }
+
+ /* ===== INFO GRIDS ===== */
+ .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+ .info-box { border: 1px solid #ccc; border-radius: 3px; padding: 6px 10px; }
+ .info-box h3 { font-size: 8pt; text-transform: uppercase; color: var(--navy); border-bottom: 1.5px solid var(--yellow); padding-bottom: 3px; margin-bottom: 7px; font-weight: bold; }
+ .info-box ul { list-style: disc; padding-left: 14px; font-size: 9pt; color: #333; line-height: 1.7; }
+ .info-box p { font-size: 9pt; color: #333; line-height: 1.7; }
+ .fill-line { border-bottom: 1.5px solid #777; min-height: 15px; font-size: 7.5pt; color: #333; margin: 4px 0; }
+
+ .code-table td { font-size: 7.5pt; padding: 3px 7px; border: 1px solid #ccc; height: auto; }
+ .code-table th { font-size: 7pt; }
+
+ .quick-guide { border-left: 4px solid var(--navy);
+ border: 1px solid #ccc;
+ border-left: 4px solid var(--navy);
+ border-radius: 3px;
+ padding: 6px 12px;
+ font-size: 7.5pt;
+ line-height: 1.4;
+ margin-bottom: 8px;
+ color: #222;
+ }
+ .quick-guide strong { color: var(--navy); }
+ .quick-guide ol { padding-left: 18px; margin-top: 4px; }
+
+ /* ===== PRINT BUTTON ===== */
+ .print-btn-wrap { text-align: center; padding: 24px; background: #efefef; }
+ .print-btn { background: var(--navy); color: white; border: none; padding: 12px 32px; font-size: 12pt; font-weight: bold; border-radius: 4px; cursor: pointer; }
+ .print-btn:hover { background: #2a3577; }
+</style>
+</head>
+<body>
+
+<!-- PRINT BUTTON -->
+<div class="print-btn-wrap no-print">
+ <p style="margin-bottom:12px; color:#222; font-size:9pt;">Open in browser → File → Print → Letter, 0.5" margins → Save as PDF</p>
+ <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+</div>
+
+
+<!-- ================================================================ -->
+<!-- PAGE 1 - FRONT COVER -->
+<!-- ================================================================ -->
+<div class="page" style="padding:0.5in 0.65in; height:10in; page-break-after:always;">
+<div class="cover">
+ <div class="cover-top">
+ <img class="cover-logo" src="logo.jpg" alt="Pest Pro Logo">
+ <div class="cover-divider"></div>
+ <div>
+ <div class="cover-title">Pest Sight Log</div>
+ <div class="cover-subtitle">Pest Monitoring &amp; Response Record</div>
+ </div>
+ <div class="cover-facility-box">
+ <div class="fac-label">Facility</div>
+ <div class="fac-name">Rehabilitation Center of Winter Park</div>
+ <div class="fac-addr">1700 Monroe Ave, Maitland, FL 32751</div>
+ </div>
+ <div class="cover-ipm-notice">
+ <strong>Integrated Pest Management (IPM) Program</strong><br>
+ This binder contains all pest control documentation required for regulatory compliance, including pest sighting logs, technician response records, and Pest Pro's license documentation. Retain all completed binders for a minimum of <strong>2 years</strong> per AHCA Rule 59A-4 and Florida Department of Agriculture &amp; Consumer Services (FDACS) regulations. Available for AHCA inspection upon request.<br><br>
+ <strong>Sighting logs</strong> are maintained at the <strong>Reception Area</strong>. Completed/stored logs are kept in the <strong>Maintenance Office</strong> and/or digitally.
+ </div>
+ </div>
+
+ <div class="cover-bottom">
+ <div class="cover-contact-bar">
+ <div class="ci"><span class="cl">Service Provider</span><span class="cv">Pest Pro, LLC</span></div>
+ <div class="ci"><span class="cl">Office</span><span class="cv">(407) 922-2276</span></div>
+ <div class="ci"><span class="cl">Technician</span><span class="cv">David Kell</span></div>
+ <div class="ci"><span class="cl">Tech Cell</span><span class="cv">(407) 840-8852</span></div>
+ <div class="ci"><span class="cl">Service</span><span class="cv">Weekly</span></div>
+ </div>
+ <div class="cover-reg-note">
+ Maintained in accordance with AHCA Rule 59A-4 (Minimum Standards for Nursing Homes / Rehabilitation Facilities), Florida Statutes Chapter 388 (Pest Control), FDACS Chapter 5E-14, and federal CMS §483.90 Physical Environment requirements.<br>
+ Questions? Contact Pest Pro: (407) 922-2276 · info@PestProLLC.com
+ </div>
+ </div>
+</div>
+</div>
+
+
+
+
+<!-- ================================================================ -->
+<!-- SIGHTING LOG PAGE -->
+<!-- ================================================================ -->
+<div class="page">
+ <div class="page-header">
+ <img class="header-logo" src="logo.jpg" alt="Pest Pro">
+ <div class="right-block">
+ <strong>Pest Sighting &amp; Technician Response Log</strong>
+ <span>Rehabilitation Center of Winter Park</span>
+ </div>
+ </div>
+
+ <table>
+ <thead>
+ <tr>
+ <th style="width:66px;">Date<br><span style="font-weight:normal;">(MM/DD/YY)</span></th>
+ <th style="width:60px;">Location<br><span style="font-weight:normal;">Code + Room</span></th>
+ <th style="width:52px;">Pest Type<br><span style="font-weight:normal;">Code</span></th>
+ <th style="width:52px;">Live / Dead / Evidence</th>
+ <th style="width:38px;">Qty</th>
+ <th>Description / Notes</th>
+ <th style="width:82px;">Reported By<br><span style="font-weight:normal;">Name + Title + Sig.</span></th>
+ </tr>
+ </thead>
+ <tbody>
+<tr><td></td><td></td><td></td><td></td><td></td><td style="color:#444; font-size:8pt; font-style:italic;">Staff completes this row →</td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+ </tbody>
+ </table>
+</div>
+
+<!-- ================================================================ -->
+<!-- SIGHTING LOG PAGE -->
+<!-- ================================================================ -->
+<div class="page">
+ <div class="page-header">
+ <img class="header-logo" src="logo.jpg" alt="Pest Pro">
+ <div class="right-block">
+ <strong>Pest Sighting &amp; Technician Response Log</strong>
+ <span>Rehabilitation Center of Winter Park</span>
+ </div>
+ </div>
+
+ <table>
+ <thead>
+ <tr>
+ <th style="width:66px;">Date<br><span style="font-weight:normal;">(MM/DD/YY)</span></th>
+ <th style="width:60px;">Location<br><span style="font-weight:normal;">Code + Room</span></th>
+ <th style="width:52px;">Pest Type<br><span style="font-weight:normal;">Code</span></th>
+ <th style="width:52px;">Live / Dead / Evidence</th>
+ <th style="width:38px;">Qty</th>
+ <th>Description / Notes</th>
+ <th style="width:82px;">Reported By<br><span style="font-weight:normal;">Name + Title + Sig.</span></th>
+ </tr>
+ </thead>
+ <tbody>
+<tr><td></td><td></td><td></td><td></td><td></td><td style="color:#444; font-size:8pt; font-style:italic;">Staff completes this row →</td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+ </tbody>
+ </table>
+</div>
+
+<!-- ================================================================ -->
+<!-- SIGHTING LOG PAGE -->
+<!-- ================================================================ -->
+<div class="page">
+ <div class="page-header">
+ <img class="header-logo" src="logo.jpg" alt="Pest Pro">
+ <div class="right-block">
+ <strong>Pest Sighting &amp; Technician Response Log</strong>
+ <span>Rehabilitation Center of Winter Park</span>
+ </div>
+ </div>
+
+ <table>
+ <thead>
+ <tr>
+ <th style="width:66px;">Date<br><span style="font-weight:normal;">(MM/DD/YY)</span></th>
+ <th style="width:60px;">Location<br><span style="font-weight:normal;">Code + Room</span></th>
+ <th style="width:52px;">Pest Type<br><span style="font-weight:normal;">Code</span></th>
+ <th style="width:52px;">Live / Dead / Evidence</th>
+ <th style="width:38px;">Qty</th>
+ <th>Description / Notes</th>
+ <th style="width:82px;">Reported By<br><span style="font-weight:normal;">Name + Title + Sig.</span></th>
+ </tr>
+ </thead>
+ <tbody>
+<tr><td></td><td></td><td></td><td></td><td></td><td style="color:#444; font-size:8pt; font-style:italic;">Staff completes this row →</td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+ </tbody>
+ </table>
+</div>
+
+<!-- ================================================================ -->
+<!-- SIGHTING LOG PAGE -->
+<!-- ================================================================ -->
+<div class="page">
+ <div class="page-header">
+ <img class="header-logo" src="logo.jpg" alt="Pest Pro">
+ <div class="right-block">
+ <strong>Pest Sighting &amp; Technician Response Log</strong>
+ <span>Rehabilitation Center of Winter Park</span>
+ </div>
+ </div>
+
+ <table>
+ <thead>
+ <tr>
+ <th style="width:66px;">Date<br><span style="font-weight:normal;">(MM/DD/YY)</span></th>
+ <th style="width:60px;">Location<br><span style="font-weight:normal;">Code + Room</span></th>
+ <th style="width:52px;">Pest Type<br><span style="font-weight:normal;">Code</span></th>
+ <th style="width:52px;">Live / Dead / Evidence</th>
+ <th style="width:38px;">Qty</th>
+ <th>Description / Notes</th>
+ <th style="width:82px;">Reported By<br><span style="font-weight:normal;">Name + Title + Sig.</span></th>
+ </tr>
+ </thead>
+ <tbody>
+<tr><td></td><td></td><td></td><td></td><td></td><td style="color:#444; font-size:8pt; font-style:italic;">Staff completes this row →</td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+ </tbody>
+ </table>
+</div>
+
+<!-- ================================================================ -->
+<!-- SIGHTING LOG PAGE -->
+<!-- ================================================================ -->
+<div class="page">
+ <div class="page-header">
+ <img class="header-logo" src="logo.jpg" alt="Pest Pro">
+ <div class="right-block">
+ <strong>Pest Sighting &amp; Technician Response Log</strong>
+ <span>Rehabilitation Center of Winter Park</span>
+ </div>
+ </div>
+
+ <table>
+ <thead>
+ <tr>
+ <th style="width:66px;">Date<br><span style="font-weight:normal;">(MM/DD/YY)</span></th>
+ <th style="width:60px;">Location<br><span style="font-weight:normal;">Code + Room</span></th>
+ <th style="width:52px;">Pest Type<br><span style="font-weight:normal;">Code</span></th>
+ <th style="width:52px;">Live / Dead / Evidence</th>
+ <th style="width:38px;">Qty</th>
+ <th>Description / Notes</th>
+ <th style="width:82px;">Reported By<br><span style="font-weight:normal;">Name + Title + Sig.</span></th>
+ </tr>
+ </thead>
+ <tbody>
+<tr><td></td><td></td><td></td><td></td><td></td><td style="color:#444; font-size:8pt; font-style:italic;">Staff completes this row →</td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+ </tbody>
+ </table>
+</div>
+
+<!-- ================================================================ -->
+<!-- SIGHTING LOG PAGE -->
+<!-- ================================================================ -->
+<div class="page">
+ <div class="page-header">
+ <img class="header-logo" src="logo.jpg" alt="Pest Pro">
+ <div class="right-block">
+ <strong>Pest Sighting &amp; Technician Response Log</strong>
+ <span>Rehabilitation Center of Winter Park</span>
+ </div>
+ </div>
+
+ <table>
+ <thead>
+ <tr>
+ <th style="width:66px;">Date<br><span style="font-weight:normal;">(MM/DD/YY)</span></th>
+ <th style="width:60px;">Location<br><span style="font-weight:normal;">Code + Room</span></th>
+ <th style="width:52px;">Pest Type<br><span style="font-weight:normal;">Code</span></th>
+ <th style="width:52px;">Live / Dead / Evidence</th>
+ <th style="width:38px;">Qty</th>
+ <th>Description / Notes</th>
+ <th style="width:82px;">Reported By<br><span style="font-weight:normal;">Name + Title + Sig.</span></th>
+ </tr>
+ </thead>
+ <tbody>
+<tr><td></td><td></td><td></td><td></td><td></td><td style="color:#444; font-size:8pt; font-style:italic;">Staff completes this row →</td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+ </tbody>
+ </table>
+</div>
+
+<!-- ================================================================ -->
+<!-- SIGHTING LOG PAGE -->
+<!-- ================================================================ -->
+<div class="page">
+ <div class="page-header">
+ <img class="header-logo" src="logo.jpg" alt="Pest Pro">
+ <div class="right-block">
+ <strong>Pest Sighting &amp; Technician Response Log</strong>
+ <span>Rehabilitation Center of Winter Park</span>
+ </div>
+ </div>
+
+ <table>
+ <thead>
+ <tr>
+ <th style="width:66px;">Date<br><span style="font-weight:normal;">(MM/DD/YY)</span></th>
+ <th style="width:60px;">Location<br><span style="font-weight:normal;">Code + Room</span></th>
+ <th style="width:52px;">Pest Type<br><span style="font-weight:normal;">Code</span></th>
+ <th style="width:52px;">Live / Dead / Evidence</th>
+ <th style="width:38px;">Qty</th>
+ <th>Description / Notes</th>
+ <th style="width:82px;">Reported By<br><span style="font-weight:normal;">Name + Title + Sig.</span></th>
+ </tr>
+ </thead>
+ <tbody>
+<tr><td></td><td></td><td></td><td></td><td></td><td style="color:#444; font-size:8pt; font-style:italic;">Staff completes this row →</td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+ </tbody>
+ </table>
+</div>
+
+<!-- ================================================================ -->
+<!-- SIGHTING LOG PAGE -->
+<!-- ================================================================ -->
+<div class="page">
+ <div class="page-header">
+ <img class="header-logo" src="logo.jpg" alt="Pest Pro">
+ <div class="right-block">
+ <strong>Pest Sighting &amp; Technician Response Log</strong>
+ <span>Rehabilitation Center of Winter Park</span>
+ </div>
+ </div>
+
+ <table>
+ <thead>
+ <tr>
+ <th style="width:66px;">Date<br><span style="font-weight:normal;">(MM/DD/YY)</span></th>
+ <th style="width:60px;">Location<br><span style="font-weight:normal;">Code + Room</span></th>
+ <th style="width:52px;">Pest Type<br><span style="font-weight:normal;">Code</span></th>
+ <th style="width:52px;">Live / Dead / Evidence</th>
+ <th style="width:38px;">Qty</th>
+ <th>Description / Notes</th>
+ <th style="width:82px;">Reported By<br><span style="font-weight:normal;">Name + Title + Sig.</span></th>
+ </tr>
+ </thead>
+ <tbody>
+<tr><td></td><td></td><td></td><td></td><td></td><td style="color:#444; font-size:8pt; font-style:italic;">Staff completes this row →</td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="tech-row">
+ <td class="row-flag" style="text-align:left; padding:3px 4px;"><span class="fl">Date Resp.</span></td>
+ <td><span class="fl">Found?</span></td>
+ <td><span class="fl">Action</span></td>
+ <td><span class="fl">Product</span></td>
+ <td><span class="fl">Status</span></td>
+ <td><span class="fl">Follow-Up: Y / N &nbsp; Next Visit: _______________________</span></td>
+ <td><span class="fl">Tech / Sig.</span></td>
+</tr>
+ </tbody>
+ </table>
+</div>
+
+<!-- ================================================================ -->
+<!-- PAGE 2 - PROGRAM OVERVIEW & COMPLIANCE INFO -->
+<!-- ================================================================ -->
+<div class="page">
+ <div class="page-header">
+ <img class="header-logo" src="logo.jpg" alt="Pest Pro">
+ <div class="right-block">
+ <strong>Program Overview &amp; Compliance Reference</strong>
+ <span>(407) 922-2276 · info@PestProLLC.com</span>
+ </div>
+ </div>
+
+ <div class="section-title">Section 1 - Facility &amp; Service Information</div>
+
+ <div class="info-grid">
+ <div class="info-box">
+ <h3>Facility Information</h3>
+ <div class="fill-line"><span style="color:#111;font-size:6.5pt;">Facility Name: </span>Rehabilitation Center of Winter Park</div>
+ <div class="fill-line"><span style="color:#111;font-size:6.5pt;">Address: </span>1700 Monroe Ave, Maitland, FL 32751</div>
+ <div class="fill-line"><span style="color:#111;font-size:6.5pt;">Facility Phone: </span></div>
+ <div class="fill-line"><span style="color:#111;font-size:6.5pt;">AHCA License #: </span></div>
+ <div class="fill-line"><span style="color:#111;font-size:6.5pt;">Facility IPM Coordinator: </span></div>
+ </div>
+ <div class="info-box">
+ <h3>Pest Pro Service Information</h3>
+ <div class="fill-line"><span style="color:#111;font-size:6.5pt;">Company: </span>Pest Pro, LLC</div>
+ <div class="fill-line"><span style="color:#111;font-size:6.5pt;">Office: </span>(407) 922-2276 · info@PestProLLC.com</div>
+ <div class="fill-line"><span style="color:#111;font-size:6.5pt;">Assigned Technician: </span>David Kell</div>
+ <div class="fill-line"><span style="color:#111;font-size:6.5pt;">Technician Cell: </span>(407) 840-8852</div>
+ <div class="fill-line"><span style="color:#111;font-size:6.5pt;">Service Frequency: </span>Mixed by area, see Service Schedule table below</div>
+ </div>
+ <div class="info-box">
+ <h3>Regulatory References</h3>
+ <ul>
+ <li>AHCA Rule 59A-4 - Minimum Standards for Nursing Homes</li>
+ <li>AHCA Rule 59A-3.278 - Rehabilitation Programs</li>
+ <li>Florida Statutes §388 - Pest Control Act</li>
+ <li>FDACS Chapter 5E-14 - Pest Control</li>
+ <li>CMS §483.90 - Physical Environment (Federal)</li>
+ </ul>
+ </div>
+ <div class="info-box">
+ <h3>Document Retention</h3>
+ <ul>
+ <li>Pest sighting logs: <strong>Minimum 2 years</strong></li>
+ <li>Technician service reports: <strong>Minimum 2 years</strong></li>
+ <li>Pesticide application records: digital (FieldworkHQ / Excelsior systems)</li>
+ <li>License &amp; insurance: Current at all times</li>
+ <li>All records available to AHCA inspector upon request</li>
+ </ul>
+ </div>
+ </div>
+
+
+ <div class="section-title">Service Schedule by Area (per signed agreement, effective 11/01/2026)</div>
+ <table class="code-table" style="margin-bottom:14px;">
+ <tr><th>Area</th><th>Inspection / Service Frequency</th><th>Detail</th></tr>
+ <tr><td><strong>Resident Rooms</strong></td><td>Weekly, rotating</td><td>Not every room serviced every visit; rooms with reported or active pest activity are prioritized same visit.</td></tr>
+ <tr><td><strong>All Other Interior</strong> (nurses stations, nourishment rooms, offices, lobby, activities room, storage)</td><td>Monthly</td><td>Full inspection, treatment as necessary based on findings.</td></tr>
+ <tr><td><strong>Dietary Kitchen</strong></td><td>Monthly</td><td>Crack and crevice, enclosed bait, or mechanical control only per food service pesticide rules.</td></tr>
+ <tr><td><strong>Exterior Perimeter</strong></td><td>Inspection: Monthly / Treatment: Quarterly</td><td>Monthly walk-around inspection; perimeter treatment applied quarterly.</td></tr>
+ <tr><td><strong>Rodent Bait Stations</strong> (client-owned units)</td><td>Quarterly</td><td>Inspection of all assigned exterior stations, rodenticide replenished as needed.</td></tr>
+ </table>
+
+ <div class="section-title">Section 2 - Pest Codes &amp; Location Codes</div>
+ <p class="section-sub">Use these codes in the Pest Sight Log for consistent documentation. Write the full pest or location name if not listed below.</p>
+
+ <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px;">
+ <div>
+ <table class="code-table">
+ <tr><th colspan="2">Pest Type Codes</th></tr>
+ <tr><td><strong>A</strong></td><td>Ants</td></tr>
+ <tr><td><strong>R</strong></td><td>Roaches / Cockroaches</td></tr>
+ <tr><td><strong>M</strong></td><td>Rodents (Mice / Rats)</td></tr>
+ <tr><td><strong>S</strong></td><td>Spiders</td></tr>
+ <tr><td><strong>F</strong></td><td>Flies / Gnats</td></tr>
+ <tr><td><strong>I</strong></td><td>Bed Bugs</td></tr>
+ <tr><td><strong>D</strong></td><td>Fleas / Ticks</td></tr>
+ <tr><td><strong>W</strong></td><td>Wasps / Bees / Stinging Insects</td></tr>
+ <tr><td><strong>V</strong></td><td>Mosquitoes</td></tr>
+ <tr><td><strong>P</strong></td><td>Silverfish / Stored Product Pests</td></tr>
+ <tr><td><strong>B</strong></td><td>Unknown Pest</td></tr>
+ <tr><td><strong>O</strong></td><td>Other (describe in notes)</td></tr>
+ </table>
+ </div>
+ <div>
+ <table class="code-table">
+ <tr><th colspan="2">Area / Location Codes</th></tr>
+ <tr><td><strong>PAT</strong></td><td>Patient Room(s)</td></tr>
+ <tr><td><strong>BATH</strong></td><td>Patient Bathroom</td></tr>
+ <tr><td><strong>HALL</strong></td><td>Hallway / Corridor</td></tr>
+ <tr><td><strong>NUR</strong></td><td>Nurses Station</td></tr>
+ <tr><td><strong>DIN</strong></td><td>Dining Room / Cafeteria</td></tr>
+ <tr><td><strong>KIT</strong></td><td>Kitchen / Food Prep</td></tr>
+ <tr><td><strong>LNDY</strong></td><td>Laundry Room</td></tr>
+ <tr><td><strong>MECH</strong></td><td>Mechanical / Utility Room</td></tr>
+ <tr><td><strong>STOR</strong></td><td>Storage Room</td></tr>
+ <tr><td><strong>LOBY</strong></td><td>Lobby / Reception</td></tr>
+ <tr><td><strong>CRT</strong></td><td>Courtyard / Patio</td></tr>
+ <tr><td><strong>OFF</strong></td><td>Office</td></tr>
+ <tr><td><strong>EXT</strong></td><td>Exterior / Grounds</td></tr>
+ <tr><td><strong>OTH</strong></td><td>Other (describe in notes)</td></tr>
+ </table>
+ </div>
+ </div>
+
+ <div class="quick-guide">
+ <strong>How Staff Should Complete a Pest Sighting Entry:</strong>
+ <ol>
+ <li>When you observe any pest, fill out the <em>white "Staff Report" row</em> immediately. Record the date, time, location code, pest type code, your name, and a brief description of what you saw.</li>
+ <li>Notify your supervisor and the Facility IPM Coordinator right away.</li>
+ <li><strong>Do not</strong> apply any pesticide or attempt to treat the area yourself.</li>
+ <li>The Pest Pro technician will complete the <em>shaded "Tech Response" row</em> when they respond.</li>
+ <li>All entries must be signed - no anonymous reports accepted.</li>
+ </ol>
+ <br>
+ <strong>⚠️ Urgent / Critical Pest Situations</strong> (bed bugs, rodents, or stinging/biting insects in patient areas): Notify supervisor and IPM Coordinator immediately. Isolate the area if feasible. Call Pest Pro directly: <strong>(407) 922-2276</strong> · David Kell: <strong>(407) 840-8852</strong>.
+ </div>
+
+</div>
+
+
+<!-- ================================================================ -->
+<!-- PAGE 3 - LICENSE & CREDENTIALS SECTION -->
+<!-- ================================================================ -->
+<div class="page">
+ <div class="page-header">
+ <img class="header-logo" src="logo.jpg" alt="Pest Pro">
+ <div class="right-block">
+ <strong>Section 3 - Pest Pro Credentials &amp; License</strong>
+ <span>(407) 922-2276 · info@PestProLLC.com</span>
+ </div>
+ </div>
+
+ <div class="section-title">Section 3 - License &amp; Insurance Documentation</div>
+ <p class="section-sub">The following documents are maintained in this section. Copies must remain current at all times. Contact Pest Pro at (407) 922-2276 to request updated copies.</p>
+
+ <div class="info-grid">
+ <div class="info-box">
+ <h3>Documents Included in This Section</h3>
+ <ul>
+ <li>✅ Florida Pest Control Business License (FDACS)</li>
+ <li>✅ Certified Operator License (CPO) - Daniel Rumsey</li>
+ <li>✅ General Liability Insurance Certificate (COI)</li>
+ </ul>
+ </div>
+ <div class="info-box">
+ <h3>License Reference</h3>
+ <div class="fill-line"><span style="color:#111;font-size:6.5pt;">FDACS Business License #: </span></div>
+ <div class="fill-line"><span style="color:#111;font-size:6.5pt;">License Type: </span>Pest Control / General Household</div>
+ <div class="fill-line"><span style="color:#111;font-size:6.5pt;">Licensed Operator: </span>Daniel Rumsey, CPO</div>
+ <div class="fill-line"><span style="color:#111;font-size:6.5pt;">License Expiration: </span></div>
+ <div class="fill-line"><span style="color:#111;font-size:6.5pt;">Insurance Expiration: </span></div>
+ </div>
+ </div>
+ <div style="font-size:8pt; color:#333;">Printed copies of FDACS Business License, CPO License, and Certificate of Insurance</div>
+ </div>
+
+</div>
+
+
+<!-- ================================================================ -->
+<!-- PAGE 6 - SCHEDULED SERVICE LOG -->
+<!-- ================================================================ -->
+<div class="page">
+ <div class="page-header">
+ <img class="header-logo" src="logo.jpg" alt="Pest Pro">
+ <div class="right-block">
+ <strong>Section 5 - Scheduled Service Log</strong>
+ <span>Year: _____________</span>
+ </div>
+ </div>
+
+ <div class="section-title">Section 5 - Scheduled Pest Control Service Log</div>
+ <p class="section-sub">Completed by the Pest Pro technician at each scheduled visit. One row per service date. Service frequency varies by area (see Service Schedule table, Section 1). Technician: <strong>David Kell, (407) 840-8852</strong></p>
+ <p class="section-sub" style="font-size:7pt;"><em>Note: Pesticide application records (product name, EPA reg #, quantities) are maintained digitally via FieldworkHQ and Excelsior's work order systems per facility policy.</em></p>
+
+ <table>
+ <thead>
+ <tr>
+ <th style="width:68px;">Service Date</th>
+ <th style="width:90px;">Areas Serviced</th>
+ <th style="width:60px;">Service Type<br><span style="font-weight:normal;">GHP / Rodent / Spot / Inspect</span></th>
+ <th>Findings &amp; Activity Noted<br><span style="font-weight:normal;">Pest activity, entry points, sanitation issues observed</span></th>
+ <th style="width:55px;">Follow-Up Required?</th>
+ <th style="width:92px;">Technician<br>Name &amp; Signature</th>
+ <th style="width:82px;">Facility Rep<br>Signature</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ </tbody>
+ </table>
+
+</div>
+
+
+<!-- ================================================================ -->
+<!-- SECTION 5 - SCHEDULED SERVICE LOG (page 2) -->
+<!-- ================================================================ -->
+<div class="page">
+ <div class="page-header">
+ <img class="header-logo" src="logo.jpg" alt="Pest Pro">
+ <div class="right-block">
+ <strong>Section 5 - Scheduled Service Log</strong>
+ <span>Year: _____________</span>
+ </div>
+ </div>
+
+ <div class="section-title">Section 5 - Scheduled Pest Control Service Log (continued)</div>
+ <p class="section-sub">Completed by the Pest Pro technician at each scheduled visit. One row per service date. Service frequency varies by area (see Service Schedule table, Section 1). Technician: <strong>David Kell, (407) 840-8852</strong></p>
+ <p class="section-sub" style="font-size:7pt;"><em>Note: Pesticide application records (product name, EPA reg #, quantities) are maintained digitally via FieldworkHQ and Excelsior's work order systems per facility policy.</em></p>
+
+ <table>
+ <thead>
+ <tr>
+ <th style="width:68px;">Service Date</th>
+ <th style="width:90px;">Areas Serviced</th>
+ <th style="width:60px;">Service Type<br><span style="font-weight:normal;">GHP / Rodent / Spot / Inspect</span></th>
+ <th>Findings &amp; Activity Noted<br><span style="font-weight:normal;">Pest activity, entry points, sanitation issues observed</span></th>
+ <th style="width:55px;">Follow-Up Required?</th>
+ <th style="width:92px;">Technician<br>Name &amp; Signature</th>
+ <th style="width:82px;">Facility Rep<br>Signature</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ </tbody>
+ </table>
+</div>
+
+<!-- ================================================================ -->
+<!-- SECTION 5 - SCHEDULED SERVICE LOG (page 3) -->
+<!-- ================================================================ -->
+<div class="page">
+ <div class="page-header">
+ <img class="header-logo" src="logo.jpg" alt="Pest Pro">
+ <div class="right-block">
+ <strong>Section 5 - Scheduled Service Log</strong>
+ <span>Year: _____________</span>
+ </div>
+ </div>
+
+ <div class="section-title">Section 5 - Scheduled Pest Control Service Log (continued)</div>
+ <p class="section-sub">Completed by the Pest Pro technician at each scheduled visit. One row per service date. Service frequency varies by area (see Service Schedule table, Section 1). Technician: <strong>David Kell, (407) 840-8852</strong></p>
+ <p class="section-sub" style="font-size:7pt;"><em>Note: Pesticide application records (product name, EPA reg #, quantities) are maintained digitally via FieldworkHQ and Excelsior's work order systems per facility policy.</em></p>
+
+ <table>
+ <thead>
+ <tr>
+ <th style="width:68px;">Service Date</th>
+ <th style="width:90px;">Areas Serviced</th>
+ <th style="width:60px;">Service Type<br><span style="font-weight:normal;">GHP / Rodent / Spot / Inspect</span></th>
+ <th>Findings &amp; Activity Noted<br><span style="font-weight:normal;">Pest activity, entry points, sanitation issues observed</span></th>
+ <th style="width:55px;">Follow-Up Required?</th>
+ <th style="width:92px;">Technician<br>Name &amp; Signature</th>
+ <th style="width:82px;">Facility Rep<br>Signature</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ </tbody>
+ </table>
+</div>
+
+<!-- ================================================================ -->
+<!-- SECTION 5 - SCHEDULED SERVICE LOG (page 4) -->
+<!-- ================================================================ -->
+<div class="page">
+ <div class="page-header">
+ <img class="header-logo" src="logo.jpg" alt="Pest Pro">
+ <div class="right-block">
+ <strong>Section 5 - Scheduled Service Log</strong>
+ <span>Year: _____________</span>
+ </div>
+ </div>
+
+ <div class="section-title">Section 5 - Scheduled Pest Control Service Log (continued)</div>
+ <p class="section-sub">Completed by the Pest Pro technician at each scheduled visit. One row per service date. Service frequency varies by area (see Service Schedule table, Section 1). Technician: <strong>David Kell, (407) 840-8852</strong></p>
+ <p class="section-sub" style="font-size:7pt;"><em>Note: Pesticide application records (product name, EPA reg #, quantities) are maintained digitally via FieldworkHQ and Excelsior's work order systems per facility policy.</em></p>
+
+ <table>
+ <thead>
+ <tr>
+ <th style="width:68px;">Service Date</th>
+ <th style="width:90px;">Areas Serviced</th>
+ <th style="width:60px;">Service Type<br><span style="font-weight:normal;">GHP / Rodent / Spot / Inspect</span></th>
+ <th>Findings &amp; Activity Noted<br><span style="font-weight:normal;">Pest activity, entry points, sanitation issues observed</span></th>
+ <th style="width:55px;">Follow-Up Required?</th>
+ <th style="width:92px;">Technician<br>Name &amp; Signature</th>
+ <th style="width:82px;">Facility Rep<br>Signature</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ </tbody>
+ </table>
+</div>
+
+<!-- ================================================================ -->
+<!-- PAGE 7 - IPM POLICY & STAFF TRAINING -->
+<!-- ================================================================ -->
+<div class="page">
+ <div class="page-header">
+ <img class="header-logo" src="logo.jpg" alt="Pest Pro">
+ <div class="right-block">
+ <strong>Section 6 - IPM Policy &amp; Staff Training</strong>
+ </div>
+ </div>
+
+ <div class="section-title">Section 6 - Facility IPM Policy &amp; Staff Awareness Training Log</div>
+
+ <div class="info-grid">
+ <div class="info-box" style="grid-column: 1 / -1;">
+ <h3>Integrated Pest Management (IPM) Policy - Rehabilitation Center of Winter Park</h3>
+ <p>This facility maintains an Integrated Pest Management program in partnership with Pest Pro, LLC. IPM prioritizes prevention, monitoring, and documentation to protect patient health, staff safety, and regulatory compliance.</p>
+ <br>
+ <p><strong>Core Principles:</strong></p>
+ <ul style="margin-top:5px;">
+ <li><strong>Prevention first:</strong> Sanitation, structural exclusion, and elimination of harborage sites are the primary defense.</li>
+ <li><strong>Staff involvement:</strong> All staff must report pest sightings using this log - no sighting is too minor. Logs are maintained at the Reception Area.</li>
+ <li><strong>No self-treatment:</strong> Staff must not apply any pesticide or pest control product. All treatment is performed by licensed Pest Pro technicians only.</li>
+ <li><strong>Documentation:</strong> All sightings and responses are logged in this binder. Pesticide application records are maintained digitally via FieldworkHQ and Excelsior's work order systems. All records available to AHCA inspectors upon request.</li>
+ <li><strong>Communication:</strong> Pest Pro will notify the IPM Coordinator of significant findings, recommended facility actions, or required follow-up.</li>
+ </ul>
+ </div>
+ <div class="info-box">
+ <h3>Staff Responsibilities Guide</h3>
+ <ul>
+ <li>Report any pest sighting immediately in this log</li>
+ <li>Notify supervisor and IPM Coordinator right away</li>
+ <li>Do <strong>NOT</strong> apply sprays, traps, or any pesticide</li>
+ <li>Do not move or disturb pests or evidence</li>
+ <li>For bed bugs, rodents, or stinging/biting insects in patient areas: isolate room, notify charge nurse, call Pest Pro directly: <strong>(407) 922-2276</strong> or David Kell: <strong>(407) 840-8852</strong></li>
+ <li>Maintain clean, dry, clutter-free work areas</li>
+ </ul>
+ </div>
+ <div class="info-box">
+ <h3>Maintenance Responsibilities Guide</h3>
+ <ul>
+ <li>Maintain this binder - current, organized, accessible at Reception</li>
+ <li>Coordinate with Pest Pro for weekly service visits</li>
+ <li>Ensure access to all service areas during technician visits</li>
+ <li>Complete facility-side recommendations promptly</li>
+ <li>Maintain door sweeps, screens, and structural exclusion</li>
+ <li>Manage trash removal frequency and container conditions</li>
+ <li>Transfer completed logs to Maintenance Office for storage</li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="section-title" style="margin-top:12px;">Staff Training / Binder Acknowledgment Log</div>
+ <p class="section-sub">Record all staff who have received pest awareness orientation or binder walk-through. May be requested during AHCA inspections.</p>
+
+ <table>
+ <thead>
+ <tr>
+ <th>Staff Name</th>
+ <th style="width:90px;">Title / Department</th>
+ <th style="width:70px;">Training Date</th>
+ <th style="width:100px;">Training Type<br><span style="font-weight:normal;">Orientation / Binder Review / IPM Policy</span></th>
+ <th style="width:100px;">Trained By</th>
+ <th style="width:100px;">Staff Signature</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+ </tbody>
+ </table>
+
+</div>
+
+
+<!-- ================================================================ -->
+<!-- PAGE 8 - REAR COVER (white background, navy border) -->
+<!-- ================================================================ -->
+<div class="page" style="padding:0; page-break-before: always;">
+<div class="rear-cover">
+ <img class="rear-logo" src="logo.jpg" alt="Pest Pro Logo">
+ <div class="rear-tagline">Pro-Level Pest Solutions · Since 1986</div>
+ <div class="rear-divider"></div>
+
+ <div class="rear-contact-block">
+ <strong>Pest Pro, LLC</strong><br>
+ Office: (407) 922-2276<br>
+ Email: info@PestProLLC.com<br>
+ Assigned Technician: David Kell · (407) 840-8852
+ </div>
+
+ <div class="rear-license-box">
+ <strong>Regulatory Compliance</strong><br>
+ Licensed by the Florida Department of Agriculture &amp; Consumer Services (FDACS)<br>
+ Chapter 5E-14 · Pest Control Business License<br>
+ Certified Operator: Daniel Rumsey, CPO<br>
+ General Liability &amp; Pest Control Insurance on file
+ </div>
+
+ <div class="rear-cta">
+ 🦟 Questions about your pest program? Call us anytime.<br>
+ (407) 922-2276 · David Kell: (407) 840-8852<br>
+ We respond promptly. Your patients deserve a pest-free environment.
+ </div>
+
+ <div class="rear-divider"></div>
+
+ <div class="rear-note">
+ This binder and all records contained herein are maintained in accordance with AHCA Rule 59A-4, Florida Statutes Chapter 388, FDACS Chapter 5E-14, and federal CMS §483.90 physical environment standards. Retain completed binders for a minimum of two (2) years from the last entry date. Active sighting logs are kept at Reception. Completed binders are stored in the Maintenance Office. For any additional information, contact Pest Pro at (407) 922-2276 or info@PestProLLC.com.
+ </div>
+</div>
+</div>
+
+</body>
+</html>
